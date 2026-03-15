@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audytor OZE & Elektroenergetyka</title>
+    <title>Audytor OZE: Prawo i Standardy (2026)</title>
     <style>
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.5; color: #333; max-width: 950px; margin: 0 auto; padding: 15px; background-color: #f0f2f5; }
         h1 { color: #1a5276; text-align: center; font-size: 1.4em; border-bottom: 3px solid #1a5276; padding-bottom: 10px; margin-bottom: 20px; }
         .category { background: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 12px; border-left: 6px solid #ccc; overflow: hidden; }
         
-        /* Kolorystyka sekcji */
         .cat-komunalne { border-left-color: #27ae60; }
         .cat-budowlane { border-left-color: #f39c12; }
         .cat-niebezpieczne { border-left-color: #c0392b; }
@@ -31,16 +30,47 @@
         .argument { background: #f8f9fa; border-left: 4px solid #34495e; padding: 10px; margin: 10px 0; font-size: 0.9em; color: #2c3e50; }
         .tag { font-size: 0.7em; padding: 2px 8px; border-radius: 4px; background: #ebf5fb; color: #2e86c1; font-weight: bold; text-transform: uppercase; margin-right: 5px; border: 1px solid #d6eaf8; }
         .tip { font-size: 0.85em; color: #666; margin-top: 5px; display: block; font-style: italic; }
+        .check-list { background: #fff4f4; border: 1px solid #f5b7b1; padding: 10px; border-radius: 5px; margin-top: 10px; }
         
         table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85em; }
         table th, table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
         table th { background-color: #f2f2f2; }
-        .warn { color: #c0392b; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <h1>📋 Audytor OZE: Prawo i Standardy (2026)</h1>
+    <h1>📋 Audytor OZE: Prawo i Kontrola Podwykonawców</h1>
+
+    <div class="category cat-komunalne">
+        <div class="category-header" onclick="toggle(this)">
+            🏠 ODPADY KOMUNALNE & WERYFIKACJA ODBIORCY <span>▼</span>
+        </div>
+        <div class="content">
+            <div class="item">
+                <span class="law-title">Dwa systemy odbioru (Kluczowe na audycie!)</span>
+                <div class="argument">
+                    Musisz ustalić, na jakiej podstawie PreZero (lub inny podmiot) zabiera śmieci:
+                </div>
+                <ul>
+                    <li><b>Opcja A: System Gminny</b> – Budowa złożyła deklarację do Gminy. Opłata jest zmienna (zależna od deklaracji). Odbiorca jest wyznaczony przez Gminę.</li>
+                    <li><b>Opcja B: Umowa Komercyjna</b> – Wykonawca sam podpisał umowę. <b>WYMAGANA KONTROLA BDO!</b></li>
+                </ul>
+            </div>
+            
+            <div class="check-list">
+                <strong>⚠️ Procedura Kontrolna Odbiorcy:</strong><br>
+                1. Sprawdź <b>wpis do BDO</b> firmy odbierającej (np. PreZero).<br>
+                2. Sprawdź <b>pozwolenie na transport</b> odpadów.<br>
+                3. Sprawdź <b>pozwolenie na zbieranie/przetwarzanie</b> (miejsce, do którego jadą odpady).<br>
+                <span class="tip">Brak sprawdzenia uprawnień kontrahenta to ryzyko "odpowiedzialności solidarnej" za nielegalne zagospodarowanie odpadów!</span>
+            </div>
+
+            <div class="item">
+                <span class="law-title">Różnica 15 01 01 (Papier) vs 15 01 02 (Folia)</span>
+                <p>Osobna segregacja w żółtym i niebieskim koszu. Zakaz mieszania opakowań wielomateriałowych bez ich rozdzielenia.</p>
+            </div>
+        </div>
+    </div>
 
     <div class="category cat-kody">
         <div class="category-header" onclick="toggle(this)">
@@ -48,24 +78,24 @@
         </div>
         <div class="content">
             <div class="item">
-                <strong>Grupa 15: Opakowania i Sorbenty</strong>
+                <strong>Odpady Opakowaniowe i Sorbenty (Grupa 15)</strong>
                 <table>
-                    <tr><th>Kod</th><th>Opis / Przykłady</th></tr>
-                    <tr><td>15 01 01</td><td>Opakowania z papieru i tektury (kartony po osprzęcie)</td></tr>
-                    <tr><td>15 01 02</td><td>Opakowania z tworzyw sztucznych (folia stretch, bańki)</td></tr>
-                    <tr><td>15 01 03</td><td>Opakowania z drewna (palety EURO, bębny kablowe)</td></tr>
-                    <tr><td>15 02 02*</td><td class="warn">Sorbenty, czyściwa skażone (wyciek oleju trafo)</td></tr>
+                    <tr><th>Kod</th><th>Opis / Zastosowanie OZE</th></tr>
+                    <tr><td>15 01 01</td><td>Karton po inwerterach, papier biurowy</td></tr>
+                    <tr><td>15 01 02</td><td>Folia stretch z palet, folie ochronne paneli</td></tr>
+                    <tr><td>15 01 03</td><td>Palety drewniane, bębny kablowe drewniane</td></tr>
+                    <tr><td>15 02 02*</td><td><b>Sorbenty skażone</b> (po wycieku oleju z trafo)</td></tr>
                 </table>
             </div>
             <div class="item">
-                <strong>Grupa 17: Odpady Budowlane i Infrastrukturalne</strong>
+                <strong>Odpady Budowlane i Infrastruktura (Grupa 17)</strong>
                 <table>
-                    <tr><th>Kod</th><th>Opis / Przykłady (OZE / Elektro)</th></tr>
-                    <tr><td>17 04 05</td><td>Żelazo i stal (<b>bednarka</b>, konstrukcje wsporcze)</td></tr>
-                    <tr><td>17 04 11</td><td>Kable (ścinki kabli miedzianych i aluminiowych)</td></tr>
-                    <tr><td>17 05 03*</td><td class="warn">Gleba i ziemia zawierająca substancje niebezpieczne</td></tr>
-                    <tr><td>17 01 01</td><td>Odpady betonu (fundamenty pod inwertery/trafo)</td></tr>
-                    <tr><td>17 02 03</td><td>Tworzywa sztuczne (rury osłonowe, peszle)</td></tr>
+                    <tr><th>Kod</th><th>Opis / Zastosowanie OZE</th></tr>
+                    <tr><td>17 04 05</td><td><b>Bednarka</b>, stalowe konstrukcje stołów PV</td></tr>
+                    <tr><td>17 04 11</td><td>Kable miedziane i aluminiowe (ścinki, uszkodzone)</td></tr>
+                    <tr><td>17 05 03*</td><td>Ziemia skażona paliwem/olejem</td></tr>
+                    <tr><td>17 01 01</td><td>Gruz betonowy (fundamenty, płyty drogowe)</td></tr>
+                    <tr><td>17 02 03</td><td>Rury osłonowe, peszle, rury typu AROT</td></tr>
                 </table>
             </div>
         </div>
@@ -73,18 +103,17 @@
 
     <div class="category cat-niebezpieczne">
         <div class="category-header" onclick="toggle(this)">
-            ⚡ TRANSFORMATORY I ADR <span>▼</span>
+            ⚡ TRANSFORMATORY, SORBENTY I ADR <span>▼</span>
         </div>
         <div class="content">
             <div class="item">
-                <span class="law-title">Zabezpieczenie przy awarii trafo</span>
-                <span class="tag">Sorbenty</span><span class="tag">ADR</span>
-                <div class="argument">W pobliżu transformatora (lub magazynu olejów) obowiązkowo:</div>
+                <span class="law-title">Zestaw awaryjny przy Transformatorze</span>
+                <div class="argument">W przypadku transformatora olejowego, na miejscu <b>MUSI</b> znajdować się:</div>
                 <ul>
-                    <li><b>Sorbenty:</b> Sypkie lub maty (gotowe do użycia).</li>
-                    <li><b>Apteczka/Zestaw ADR:</b> Łopata, osłona kanalizacyjna, pojemnik do zbierania wycieku.</li>
+                    <li><b>Sorbent sypki lub maty:</b> Minimalna ilość dobrana do skali potencjalnego wycieku.</li>
+                    <li><b>Apteczka ADR / Zestaw Environmental:</b> Łopata iskrząca, arkusz uszczelniający studzienki, pojemnik na odpady niebezpieczne.</li>
                 </ul>
-                <span class="tip">Argument: Brak zestawu ratowniczego uniemożliwia natychmiastowe zatrzymanie wycieku oleju do gruntu (Art. 25 Ustawy o Odpadach).</span>
+                <span class="tip">Brak zabezpieczeń = rażące zaniedbanie ochrony wód podziemnych.</span>
             </div>
         </div>
     </div>
@@ -96,41 +125,19 @@
         <div class="content">
             <div class="item">
                 <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20170001566" target="_blank" class="law-title">🔗 Ustawa Prawo Wodne</a>
-                <span class="tag">Pozwolenia</span><span class="tag">Zgłoszenia</span>
-                <div class="argument">Wymagane pozwolenie wodnoprawne lub zgłoszenie dla:</div>
+                <span class="tag">Pozwolenia</span>
                 <ul>
-                    <li><b>Odwodnienie wykopów:</b> Jeśli trwa dłużej niż 60 dni lub przekracza limity poboru.</li>
-                    <li><b>Pobór wody ze studni:</b> Dla potrzeb budowy (cele technologiczne).</li>
-                    <li><b>Odprowadzenie ścieków:</b> Np. woda z odwadniania odprowadzana do rowu lub rzeki.</li>
-                    <li><b>Urządzenia wodne:</b> Budowa przepustów, mostków dojazdowych, rowów odwadniających.</li>
+                    <li><b>Odwodnienie wykopów:</b> Wymagane, gdy proces trwa > 60 dni.</li>
+                    <li><b>Pobór wody ze studni:</b> Wymagany powyżej 5 m3/dobę (pobór technologiczny).</li>
+                    <li><b>Urządzenia wodne:</b> Każdy przepust pod drogą dojazdową do farmy PV.</li>
+                    <li><b>Zrzut ścieków:</b> Odprowadzanie wód z odwadniania do rowu obcego.</li>
                 </ul>
-                <span class="tip">Brak pozwolenia to kara biegowa (opłata podwyższona) nakładana przez Wody Polskie.</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="category cat-komunalne">
-        <div class="category-header" onclick="toggle(this)">
-            🏠 ODPADY KOMUNALNE I PODŁOŻE <span>▼</span>
-        </div>
-        <div class="content">
-            <div class="item">
-                <span class="law-title">Różnica 15 01 01 vs 15 01 02</span>
-                <div class="argument">
-                    <b>15 01 01:</b> Tylko PAPIER i TEKTURA (niebieski kosz).<br>
-                    <b>15 01 02:</b> Tylko TWORZYWA SZTUCZNE (żółty kosz).
-                </div>
-                <span class="tip">Na budowie często folia (02) ląduje w kartonie (01) – to błąd segregacji!</span>
-            </div>
-            <div class="item">
-                <span class="law-title">Wanny i Agregaty</span>
-                <div class="argument">Agregat na budowie = wanna 110%. Zakaz stawiania bezpośrednio na gruncie.</div>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <b>Sebastian Audyt Tool v3.0 | OZE & Elektro</b><br>
+        <b>Sebastian Audyt Tool v4.0 | OZE & Elektro</b><br>
         Aktualizacja: Marzec 2026.
     </div>
 
