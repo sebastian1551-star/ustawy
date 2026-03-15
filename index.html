@@ -3,11 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Asystent Audytora Ochrony Środowiska</title>
+    <title>Audytor OZE & Elektroenergetyka</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.5; color: #333; max-width: 900px; margin: 0 auto; padding: 15px; background-color: #f0f2f5; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.5; color: #333; max-width: 950px; margin: 0 auto; padding: 15px; background-color: #f0f2f5; }
         h1 { color: #1a5276; text-align: center; font-size: 1.4em; border-bottom: 3px solid #1a5276; padding-bottom: 10px; margin-bottom: 20px; }
-        
         .category { background: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 12px; border-left: 6px solid #ccc; overflow: hidden; }
         
         /* Kolorystyka sekcji */
@@ -15,148 +14,131 @@
         .cat-budowlane { border-left-color: #f39c12; }
         .cat-niebezpieczne { border-left-color: #c0392b; }
         .cat-techniczne { border-left-color: #2980b9; }
+        .cat-wodne { border-left-color: #00ced1; }
+        .cat-kody { border-left-color: #8e44ad; }
 
         .category-header { padding: 15px; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; align-items: center; font-size: 1.1em; transition: 0.3s; }
         .cat-komunalne .category-header { background: #eafaf1; color: #1e8449; }
         .cat-budowlane .category-header { background: #fef5e7; color: #af601a; }
         .cat-niebezpieczne .category-header { background: #f9ebea; color: #922b21; }
         .cat-techniczne .category-header { background: #ebf5fb; color: #21618c; }
-
-        .category-header:hover { opacity: 0.8; }
+        .cat-wodne .category-header { background: #e0ffff; color: #008b8b; }
+        .cat-kody .category-header { background: #f5eef8; color: #6c3483; }
 
         .content { padding: 0 15px; display: none; background: white; padding-bottom: 15px; }
         .item { border-bottom: 1px solid #eee; padding: 15px 0; }
-        .item:last-child { border-bottom: none; }
-        
-        .law-title { font-weight: bold; color: #2980b9; text-decoration: none; display: block; margin-bottom: 6px; font-size: 1em; }
-        .law-title:hover { text-decoration: underline; }
-        
-        .argument { background: #f8f9fa; border-left: 4px solid #34495e; padding: 10px; margin: 10px 0; font-size: 0.9em; color: #2c3e50; line-height: 1.4; }
-        
+        .law-title { font-weight: bold; color: #2980b9; text-decoration: none; display: block; margin-bottom: 6px; }
+        .argument { background: #f8f9fa; border-left: 4px solid #34495e; padding: 10px; margin: 10px 0; font-size: 0.9em; color: #2c3e50; }
         .tag { font-size: 0.7em; padding: 2px 8px; border-radius: 4px; background: #ebf5fb; color: #2e86c1; font-weight: bold; text-transform: uppercase; margin-right: 5px; border: 1px solid #d6eaf8; }
+        .tip { font-size: 0.85em; color: #666; margin-top: 5px; display: block; font-style: italic; }
         
-        .fraction-box { display: flex; flex-wrap: wrap; gap: 5px; margin: 10px 0; }
-        .fraction { font-size: 0.8em; padding: 3px 8px; border-radius: 4px; color: white; font-weight: bold; }
-        
-        .tip { font-size: 0.85em; color: #666; margin-top: 5px; display: block; }
-        .footer { text-align: center; margin-top: 30px; font-size: 0.8em; color: #7f8c8d; padding-bottom: 20px; }
+        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85em; }
+        table th, table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        table th { background-color: #f2f2f2; }
+        .warn { color: #c0392b; font-weight: bold; }
     </style>
 </head>
 <body>
 
-    <h1>📋 Panel Audytora Ochrony Środowiska</h1>
+    <h1>📋 Audytor OZE: Prawo i Standardy (2026)</h1>
 
-    <div class="category cat-komunalne">
+    <div class="category cat-kody">
         <div class="category-header" onclick="toggle(this)">
-            🏠 1. ODPADY KOMUNALNE <span>▼</span>
+            🔢 SŁOWNIK KODÓW (15 i 17) - BRANŻA OZE <span>▼</span>
         </div>
         <div class="content">
             <div class="item">
-                <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20020750690" target="_blank" class="law-title">🔗 Warunki Techniczne (§ 22 ust. 2)</a>
-                <span class="tag">Podłoże</span><span class="tag">Standard Budowy</span>
-                <div class="argument">"Miejsca na pojemniki i kontenery muszą mieć nawierzchnię utwardzoną, wykonaną z materiałów trwałych."</div>
-                <span class="tip">Argument na: kontenery stojące bezpośrednio na ziemi, kamieniach lub tłuczniu.</span>
+                <strong>Grupa 15: Opakowania i Sorbenty</strong>
+                <table>
+                    <tr><th>Kod</th><th>Opis / Przykłady</th></tr>
+                    <tr><td>15 01 01</td><td>Opakowania z papieru i tektury (kartony po osprzęcie)</td></tr>
+                    <tr><td>15 01 02</td><td>Opakowania z tworzyw sztucznych (folia stretch, bańki)</td></tr>
+                    <tr><td>15 01 03</td><td>Opakowania z drewna (palety EURO, bębny kablowe)</td></tr>
+                    <tr><td>15 02 02*</td><td class="warn">Sorbenty, czyściwa skażone (wyciek oleju trafo)</td></tr>
+                </table>
             </div>
             <div class="item">
-                <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20170000019" target="_blank" class="law-title">🔗 Rozp. ws. Segregacji (JSSO)</a>
-                <span class="tag">5 Frakcji</span><span class="tag">Kolory</span>
-                <div class="argument">Obowiązek rozdzielania: Papier (niebieski), Metale/Plastik (żółty), Szkło (zielony), Bio (brązowy), Zmieszane (czarny).</div>
-                <span class="tip">Sprawdź, czy na budowie jest brązowy pojemnik na resztki jedzenia (BIO).</span>
-            </div>
-        </div>
-    </div>
-
-    <div class="category cat-budowlane">
-        <div class="category-header" onclick="toggle(this)">
-            🏗️ 2. ODPADY BUDOWLANE I ROZBIÓRKOWE <span>▼</span>
-        </div>
-        <div class="content">
-            <div class="item">
-                <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20130000021" target="_blank" class="law-title">🔗 Ustawa o odpadach (Art. 101a)</a>
-                <span class="tag">Segregacja u źródła</span><span class="tag">Nowe Kary</span>
-                <div class="argument">Odpady budowlane zbiera się selektywnie. Należy wydzielić co najmniej:</div>
-                <div class="fraction-box">
-                    <span class="fraction" style="background: #7f8c8d;">Drewno</span>
-                    <span class="fraction" style="background: #2980b9;">Metale</span>
-                    <span class="fraction" style="background: #95a5a6;">Szkło</span>
-                    <span class="fraction" style="background: #d35400;">Tworzywa</span>
-                    <span class="fraction" style="background: #7e5109;">Gips</span>
-                    <span class="fraction" style="background: #34495e;">Gruz</span>
-                </div>
-            </div>
-            <div class="item">
-                <span class="law-title">Ewidencja i KPO (System BDO)</span>
-                <span class="tag">Dokumentacja</span>
-                <div class="argument">Każdy wywóz gruzu/odpadów musi być potwierdzony Kartą Przekazania Odpadu wygenerowaną przed transportem.</div>
+                <strong>Grupa 17: Odpady Budowlane i Infrastrukturalne</strong>
+                <table>
+                    <tr><th>Kod</th><th>Opis / Przykłady (OZE / Elektro)</th></tr>
+                    <tr><td>17 04 05</td><td>Żelazo i stal (<b>bednarka</b>, konstrukcje wsporcze)</td></tr>
+                    <tr><td>17 04 11</td><td>Kable (ścinki kabli miedzianych i aluminiowych)</td></tr>
+                    <tr><td>17 05 03*</td><td class="warn">Gleba i ziemia zawierająca substancje niebezpieczne</td></tr>
+                    <tr><td>17 01 01</td><td>Odpady betonu (fundamenty pod inwertery/trafo)</td></tr>
+                    <tr><td>17 02 03</td><td>Tworzywa sztuczne (rury osłonowe, peszle)</td></tr>
+                </table>
             </div>
         </div>
     </div>
 
     <div class="category cat-niebezpieczne">
         <div class="category-header" onclick="toggle(this)">
-            ⚠️ 3. ODPADY NIEBEZPIECZNE I CHEMIKALIA <span>▼</span>
+            ⚡ TRANSFORMATORY I ADR <span>▼</span>
         </div>
         <div class="content">
             <div class="item">
-                <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20200001395" target="_blank" class="law-title">🔗 Rozp. ws. magazynowania odpadów (2020)</a>
-                <span class="tag">Etykiety</span><span class="tag">Szczelność</span>
-                <div class="argument">Odpady niebezpieczne (oleje, farby, czyściwa) muszą być w szczelnych pojemnikach z opisem i kodem odpadu (z gwiazdką *).</div>
-            </div>
-            <div class="item">
-                <span class="law-title">Postępowanie po wycieku</span>
-                <span class="tag">Sorbenty</span><span class="tag">Ziemia skażona</span>
-                <div class="argument">
-                    Zużyty sorbent = kod <b>15 02 02*</b><br>
-                    Zanieczyszczona ziemia = kod <b>17 05 03*</b>
-                </div>
-                <span class="tip">Zakaz mieszania z gruntem! Należy wybrać ziemię do "czystego".</span>
+                <span class="law-title">Zabezpieczenie przy awarii trafo</span>
+                <span class="tag">Sorbenty</span><span class="tag">ADR</span>
+                <div class="argument">W pobliżu transformatora (lub magazynu olejów) obowiązkowo:</div>
+                <ul>
+                    <li><b>Sorbenty:</b> Sypkie lub maty (gotowe do użycia).</li>
+                    <li><b>Apteczka/Zestaw ADR:</b> Łopata, osłona kanalizacyjna, pojemnik do zbierania wycieku.</li>
+                </ul>
+                <span class="tip">Argument: Brak zestawu ratowniczego uniemożliwia natychmiastowe zatrzymanie wycieku oleju do gruntu (Art. 25 Ustawy o Odpadach).</span>
             </div>
         </div>
     </div>
 
-    <div class="category cat-techniczne">
+    <div class="category cat-wodne">
         <div class="category-header" onclick="toggle(this)">
-            🌳 4. WANNY, AGREGATY I OCHRONA DRZEW <span>▼</span>
+            💧 PRAWO WODNE NA BUDOWIE <span>▼</span>
         </div>
         <div class="content">
             <div class="item">
-                <span class="law-title">Wanny ociekowe (Zasada 110%)</span>
-                <span class="tag">Wycieki</span><span class="tag">Agregaty</span>
-                <div class="argument">Pojemniki z paliwem i agregaty prądotwórcze muszą stać w wannach ociekowych o pojemności min. 110% największego zbiornika.</div>
-                <span class="tip">Sprawdź czy wanna nie ma otwartego korka spustowego i czy nie stoi w niej woda deszczowa (zmniejsza pojemność).</span>
+                <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20170001566" target="_blank" class="law-title">🔗 Ustawa Prawo Wodne</a>
+                <span class="tag">Pozwolenia</span><span class="tag">Zgłoszenia</span>
+                <div class="argument">Wymagane pozwolenie wodnoprawne lub zgłoszenie dla:</div>
+                <ul>
+                    <li><b>Odwodnienie wykopów:</b> Jeśli trwa dłużej niż 60 dni lub przekracza limity poboru.</li>
+                    <li><b>Pobór wody ze studni:</b> Dla potrzeb budowy (cele technologiczne).</li>
+                    <li><b>Odprowadzenie ścieków:</b> Np. woda z odwadniania odprowadzana do rowu lub rzeki.</li>
+                    <li><b>Urządzenia wodne:</b> Budowa przepustów, mostków dojazdowych, rowów odwadniających.</li>
+                </ul>
+                <span class="tip">Brak pozwolenia to kara biegowa (opłata podwyższona) nakładana przez Wody Polskie.</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="category cat-komunalne">
+        <div class="category-header" onclick="toggle(this)">
+            🏠 ODPADY KOMUNALNE I PODŁOŻE <span>▼</span>
+        </div>
+        <div class="content">
+            <div class="item">
+                <span class="law-title">Różnica 15 01 01 vs 15 01 02</span>
+                <div class="argument">
+                    <b>15 01 01:</b> Tylko PAPIER i TEKTURA (niebieski kosz).<br>
+                    <b>15 01 02:</b> Tylko TWORZYWA SZTUCZNE (żółty kosz).
+                </div>
+                <span class="tip">Na budowie często folia (02) ląduje w kartonie (01) – to błąd segregacji!</span>
             </div>
             <div class="item">
-                <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20040920880" target="_blank" class="law-title">🔗 Ustawa o ochronie przyrody (Art. 82)</a>
-                <span class="tag">Odeskowanie</span><span class="tag">Korzenie</span>
-                <div class="argument">
-                    <b>Zasady odeskowania:</b><br>
-                    1. Deski min. 2m wysokości.<br>
-                    2. Między deskami a kora miękka przekładka (juta/guma).<br>
-                    3. Zakaz wbijania gwoździ w drzewo.<br>
-                    4. Zakaz składowania materiałów pod koroną (SOD).
-                </div>
-                <span class="tip">Za zniszczenie drzewa grożą kary administracyjne liczone w dziesiątkach tysięcy złotych.</span>
+                <span class="law-title">Wanny i Agregaty</span>
+                <div class="argument">Agregat na budowie = wanna 110%. Zakaz stawiania bezpośrednio na gruncie.</div>
             </div>
         </div>
     </div>
 
     <div class="footer">
-        <b>Sebastian Audyt Tool v2.0</b><br>
-        Zawsze sprawdzaj wersję ujednoliconą na stronach ISAP.<br>
-        Aktualizacja prawna: Marzec 2026.
+        <b>Sebastian Audyt Tool v3.0 | OZE & Elektro</b><br>
+        Aktualizacja: Marzec 2026.
     </div>
 
     <script>
         function toggle(header) {
             const content = header.nextElementSibling;
             const arrow = header.querySelector('span');
-            const isOpen = content.style.display === "block";
-            
-            // Zamknij wszystkie inne (opcjonalne - usuń jeśli chcesz mieć wiele otwartych)
-            // document.querySelectorAll('.content').forEach(c => c.style.display = 'none');
-            // document.querySelectorAll('.category-header span').forEach(s => s.innerText = '▼');
-
-            if (isOpen) {
+            if (content.style.display === "block") {
                 content.style.display = "none";
                 arrow.innerText = "▼";
             } else {
