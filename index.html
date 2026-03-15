@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niezbędnik Audytora Pro</title>
+    <style>
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.5; color: #333; max-width: 900px; margin: 0 auto; padding: 15px; background-color: #f0f2f5; }
+        h1 { color: #1a5276; text-align: center; font-size: 1.4em; border-bottom: 3px solid #1a5276; padding-bottom: 10px; }
+        .category { background: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 12px; border-left: 6px solid #ccc; }
+        
+        /* Kolory sekcji */
+        .cat-komunalne { border-left-color: #27ae60; }
+        .cat-budowlane { border-left-color: #f39c12; }
+        .cat-niebezpieczne { border-left-color: #c0392b; }
+
+        .category-header { padding: 15px; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; align-items: center; font-size: 1.1em; }
+        .cat-komunalne .category-header { background: #eafaf1; color: #1e8449; }
+        .cat-budowlane .category-header { background: #fef5e7; color: #af601a; }
+        .cat-niebezpieczne .category-header { background: #f9ebea; color: #922b21; }
+
+        .content { padding: 0 15px; display: none; background: white; padding-bottom: 10px; }
+        .item { border-bottom: 1px solid #eee; padding: 12px 0; }
+        .item:last-child { border-bottom: none; }
+        
+        .law-title { font-weight: bold; color: #2980b9; text-decoration: none; display: block; margin-bottom: 4px; }
+        .argument { background: #f8f9fa; border-left: 3px solid #34495e; padding: 8px; margin: 8px 0; font-size: 0.85em; color: #2c3e50; }
+        .tag { font-size: 0.7em; padding: 2px 6px; border-radius: 4px; background: #ebf5fb; color: #2e86c1; font-weight: bold; text-transform: uppercase; margin-right: 5px; }
+        
+        .fraction-box { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
+        .fraction { font-size: 0.8em; padding: 2px 5px; border-radius: 3px; color: white; font-weight: bold; }
+    </style>
+</head>
+<body>
+
+    <h1>📋 Panel Audytora: Odpady i Prawo</h1>
+
+    <div class="category cat-komunalne">
+        <div class="category-header" onclick="toggle(this)">
+            🏠 1. ODPADY KOMUNALNE <span>▼</span>
+        </div>
+        <div class="content">
+            <div class="item">
+                <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20020750690" target="_blank" class="law-title">🔗 Rozp. Warunki Techniczne (§ 22)</a>
+                <span class="tag">Podłoże</span><span class="tag">BHP</span>
+                <div class="argument">"Miejsca na pojemniki muszą mieć nawierzchnię utwardzoną."</div>
+                <p style="font-size: 0.85em;">Podstawa do zakwestionowania ustawienia kontenerów na piachu lub kamieniach.</p>
+            </div>
+            <div class="item">
+                <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20170000019" target="_blank" class="law-title">🔗 Rozp. ws. Segregacji (2016)</a>
+                <span class="tag">5 Frakcji</span>
+                <div class="argument">Obowiązek rozdzielania: Papier, Szkło, Metale/Plastik, Bio, Zmieszane.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category cat-budowlane">
+        <div class="category-header" onclick="toggle(this)">
+            🏗️ 2. ODPADY BUDOWLANE (Gruz, Drewno) <span>▼</span>
+        </div>
+        <div class="content">
+            <div class="item">
+                <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20130000021" target="_blank" class="law-title">🔗 Ustawa o odpadach (Art. 101a)</a>
+                <span class="tag">Nowość 2025</span><span class="tag">Segregacja</span>
+                <div class="argument">"Odpady budowlane i rozbiórkowe zbiera się selektywnie z podziałem na co najmniej 6 frakcji."</div>
+                <div class="fraction-box">
+                    <span class="fraction" style="background: #7f8c8d;">Drewno</span>
+                    <span class="fraction" style="background: #2980b9;">Metale</span>
+                    <span class="fraction" style="background: #95a5a6;">Szkło</span>
+                    <span class="fraction" style="background: #d35400;">Tworzywa</span>
+                    <span class="fraction" style="background: #7e5109;">Gips</span>
+                    <span class="fraction" style="background: #34495e;">Gruz</span>
+                </div>
+            </div>
+            <div class="item">
+                <span class="law-title">Karta Przekazania Odpadu (BDO)</span>
+                <span class="tag">KPO</span><span class="tag">Transport</span>
+                <div class="argument">Każdy transport gruzu musi mieć wygenerowane potwierdzenie w BDO przed wyjazdem z budowy.</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="category cat-niebezpieczne">
+        <div class="category-header" onclick="toggle(this)">
+            ⚠️ 3. ODPADY NIEBEZPIECZNE (Oleje, Sorbenty) <span>▼</span>
+        </div>
+        <div class="content">
+            <div class="item">
+                <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20200001395" target="_blank" class="law-title">🔗 Rozp. ws. szczegółowych wymagań (2020)</a>
+                <span class="tag">Magazynowanie</span><span class="tag">Etykiety</span>
+                <div class="argument">Odpady niebezpieczne muszą być magazynowane w szczelnych pojemnikach, odpornych na działanie substancji, z czytelną etykietą.</div>
+            </div>
+            <div class="item">
+                <span class="law-title">Procedura Wycieku (Sorbenty/Ziemia)</span>
+                <span class="tag">Kod 15 02 02*</span><span class="tag">Kod 17 05 03*</span>
+                <div class="argument">Zanieczyszczona ziemia i sorbenty to odpady niebezpieczne. Zakaz mieszania z innymi odpadami!</div>
+                <p style="font-size: 0.85em;">Wymagana karta charakterystyki substancji (MSDS) na miejscu awarii.</p>
+            </div>
+            <div class="item">
+                <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20210001235" target="_blank" class="law-title">🔗 Ustawa (Zmiana 2021) - Monitoring</a>
+                <span class="tag">PPOŻ</span><span class="tag">Kamery</span>
+                <div class="argument">Miejsce magazynowania odpadów palnych (np. opakowania po chemii) musi spełniać wymogi ppoż i zabezpieczenia roszczeń.</div>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 20px; font-size: 0.8em; color: #7f8c8d;">
+        Pamiętaj: Zawsze sprawdzaj "Tekst ujednolicony" na ISAP.<br>
+        Ostatnia aktualizacja bazy: 2026 r.
+    </div>
+
+    <script>
+        function toggle(header) {
+            const content = header.nextElementSibling;
+            const arrow = header.querySelector('span');
+            if (content.style.display === "block") {
+                content.style.display = "none";
+                arrow.innerText = "▼";
+            } else {
+                content.style.display = "block";
+                arrow.innerText = "▲";
+            }
+        }
+    </script>
+</body>
+</html>
