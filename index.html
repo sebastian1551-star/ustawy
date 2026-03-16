@@ -13,6 +13,8 @@
             --grey: #607D8B;
             --green: #4CAF50;
             --yellow: #fbc02d;
+            --brown: #795548;
+            --purple: #9c27b0;
         }
 
         body {
@@ -31,7 +33,6 @@
             overflow: hidden;
         }
 
-        /* NAGŁÓWEK GŁÓWNY */
         .main-title {
             background: linear-gradient(135deg, #1a237e 0%, #0077b6 100%);
             color: white;
@@ -42,10 +43,7 @@
             letter-spacing: 2px;
         }
 
-        /* STYL SEKCJI */
-        .section {
-            border-bottom: 1px solid #eee;
-        }
+        .section { border-bottom: 1px solid #eee; }
 
         .section-header {
             padding: 20px 25px;
@@ -73,14 +71,11 @@
         .bg-grey { background-color: var(--grey); }
         .bg-yellow { background-color: var(--yellow); color: #000 !important; }
         .bg-green { background-color: var(--green); }
+        .bg-brown { background-color: var(--brown); }
+        .bg-purple { background-color: var(--purple); }
 
-        /* ELEMENTY WEWNĄTRZ */
         ul { list-style: none; padding-left: 0; }
-        li { 
-            margin-bottom: 10px; 
-            padding-left: 25px; 
-            position: relative; 
-        }
+        li { margin-bottom: 10px; padding-left: 25px; position: relative; }
         li::before {
             content: "→";
             position: absolute;
@@ -120,8 +115,6 @@
 
         .arrow { transition: 0.3s; }
         .is-open .arrow { transform: rotate(180deg); }
-
-        strong { color: #2c3e50; }
     </style>
 </head>
 <body>
@@ -131,57 +124,89 @@
 
     <div class="section">
         <div class="section-header bg-blue" onclick="toggle(this)">
-            <span>🟦 ZGŁOSZENIE WODNOPRAWNE (Małe oddziaływanie)</span>
+            <span>🟦 ZGŁOSZENIE WODNOPRAWNE</span>
             <span class="arrow">▼</span>
         </div>
         <div class="section-content">
             <span class="law-tag">Art. 394 Prawo Wodne</span>
             <ul>
-                <li><strong>Pomosty:</strong> szer. ≤ 3m, dł. ≤ 25m łącznej.</li>
-                <li><strong>Linie napowietrzne:</strong> energetyka/telekom nad wodami.</li>
-                <li><strong>Wykopy:</strong> trwałe odwadnianie wykopów budowlanych.</li>
-                <li><strong>Stawy:</strong> do 5000 m² i 3m głębokości (deszczówka/gruntówka).</li>
-                <li><strong>Rowy/Przepusty:</strong> przebudowa do 10m długości.</li>
-                <li><strong>Wody z wykopów:</strong> odprowadzanie z pompowań próbnych.</li>
+                <li>Pomosty ≤ 3m szer., dł. ≤ 25m.</li>
+                <li>Napowietrzne linie energetyczne nad wodami.</li>
+                <li>Trwałe odwadnianie wykopów budowlanych.</li>
+                <li>Przebudowa rowu (przepusty) do 10m długości.</li>
             </ul>
-            <div class="tip-box">
-                <strong>PAMIĘTAJ:</strong> Zgłoszenie to procedura uproszczona, ale brak sprzeciwu "Wód Polskich" jest wymagany przed startem prac!
-            </div>
         </div>
     </div>
 
     <div class="section">
         <div class="section-header bg-orange" onclick="toggle(this)">
-            <span>🟧 POZWOLENIE WODNOPRAWNE (Duże oddziaływanie)</span>
+            <span>🟧 POZWOLENIE: ODPRAWDZANIE WÓD I USŁUGI</span>
             <span class="arrow">▼</span>
         </div>
         <div class="section-content">
-            <span class="law-tag">Art. 399 Prawo Wodne</span>
+            <span class="law-tag">Art. 399 i Usługi Wodne</span>
+            <strong>Odprowadzanie wód opadowych do cieków wodnych:</strong>
             <ul>
-                <li><strong>Usługi wodne:</strong> pobór wód, zrzut ścieków/deszczówki.</li>
-                <li><strong>Urządzenia wodne:</strong> wyloty, duże przepusty (>10m), mosty, jazy.</li>
-                <li><strong>Regulacja:</strong> prace w korytach rzek i potoków.</li>
-                <li><strong>Obniżenie wód:</strong> długotrwałe obniżenie poziomu wód podziemnych.</li>
-                <li><strong>Wały:</strong> każda ingerencja w wał przeciwpowodziowy.</li>
+                <li>Wymagane, gdy odprowadzasz deszczówkę z <strong>powierzchni utwardzonych</strong> (drogi, dachy, bazy) do rzek, potoków lub rowów niebędących Twoją własnością.</li>
+                <li>Sprawdź: Czy wylot jest zgodny z operatem?</li>
+                <li>Sprawdź: Czy zachowano parametry jakościowe (zawiesina, substancje ropopochodne)?</li>
             </ul>
-            <div class="tip-box" style="border-color: #2196F3; background: #e3f2fd;">
-                <strong>PROCES:</strong> Pozwolenie wymaga <strong>Operatu Wodnoprawnego</strong>. Sprawdź, czy wykonawca go posiada!
+            <strong>Inne wymagania:</strong>
+            <ul>
+                <li>Wykonanie urządzeń wodnych (wyloty, mosty, duże przepusty > 10m).</li>
+                <li>Regulacja koryt cieków wodnych.</li>
+                <li>Wprowadzanie ścieków do ziemi.</li>
+            </ul>
+            <div class="tip-box">
+                <strong>AUDYT:</strong> Sprawdź termin ważności pozwolenia (zwykle wydawane na 10-30 lat, ale dla ścieków często krócej).
             </div>
         </div>
     </div>
 
     <div class="section">
-        <div class="section-header bg-red" onclick="toggle(this)">
-            <span>🟥 USŁUGI WODNE (Zawsze pozwolenie)</span>
+        <div class="section-header bg-brown" onclick="toggle(this)">
+            <span>🟫 ODPADY KOMUNALNE I BUDOWLANE</span>
             <span class="arrow">▼</span>
         </div>
         <div class="section-content">
+            <span class="law-tag">Art. 101a Ustawy o Odpadach</span>
+            <strong>Odpady Budowlane (Segregacja u źródła):</strong>
             <ul>
-                <li><strong>Wody opadowe:</strong> wprowadzanie deszczówki do wód lub rowów.</li>
-                <li><strong>Pobór wód:</strong> gruntowych lub powierzchniowych (np. do wierceń).</li>
-                <li><strong>Ścieki:</strong> wprowadzanie do ziemi lub wód.</li>
-                <li><strong>Retencja:</strong> piętrzenie i magazynowanie wód.</li>
+                <li>Obowiązek segregacji na: drewno, metale, szkło, tworzywa sztuczne, gips, odpady mineralne (beton, cegły).</li>
+                <li>Zakaz mieszania odpadów budowlanych z komunalnymi.</li>
             </ul>
+            <strong>Odpady Komunalne na budowie:</strong>
+            <ul>
+                <li>Muszą być gromadzone w wydzielonych, opisanych pojemnikach.</li>
+                <li>Zapewnienie regularnego odbioru (umowa z gminą lub firmą).</li>
+            </ul>
+            <strong>Karta Przekazania Odpadu (BDO):</strong>
+            <ul>
+                <li>Sprawdź, czy każdy transport odpadów z budowy ma wygenerowaną kartę w systemie BDO.</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-header bg-purple" onclick="toggle(this)">
+            <span>🟪 KARTY CHARAKTERYSTYKI (REACH)</span>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="section-content">
+            <span class="law-tag">Rozporządzenie REACH / BHP</span>
+            <strong>Dostępność na budowie:</strong>
+            <ul>
+                <li>Każda substancja niebezpieczna (paliwa, oleje, spraye, żywice) <strong>musi</strong> mieć Kartę Charakterystyki (SDS) dostępną na miejscu prac.</li>
+                <li>Karty mogą być w formie segregatora lub cyfrowej (dostępnej dla każdego pracownika).</li>
+            </ul>
+            <strong>Weryfikacja aktualności:</strong>
+            <ul>
+                <li>Sprawdź sekcję 1 (dane dostawcy) i sekcję 16 (data aktualizacji).</li>
+                <li>Czy instrukcje z karty (np. środki ochrony osobistej) są stosowane przez pracowników?</li>
+            </ul>
+            <div class="danger-box">
+                <strong>BRAK KARTY = BRAK PRACY:</strong> W razie wycieku lub zatrucia, karta jest niezbędna dla służb ratunkowych!
+            </div>
         </div>
     </div>
 
@@ -191,58 +216,39 @@
             <span class="arrow">▼</span>
         </div>
         <div class="section-content">
-            <strong>1. Wygrodzenia i barierki:</strong>
             <ul>
-                <li>Wykop > 1m = <strong>obowiązkowa barierka</strong>.</li>
-                <li>Poręcz na wys. <strong>1,1m</strong> + deska krawężnikowa (bortnica) <strong>15cm</strong>.</li>
-                <li>Odsunięcie barierki min. <strong>1m</strong> od krawędzi.</li>
+                <li>Wykop > 1m = barierka 1,1m + bortnica 15cm.</li>
+                <li>Schodnie: <strong>obustronne poręcze</strong>.</li>
+                <li>Urobek min. 0,6m od krawędzi.</li>
             </ul>
-            <strong>2. Skarpowanie:</strong>
-            <ul>
-                <li>Kąt nachylenia skarpy dobrany do gruntu (bezpieczny klin odłamu).</li>
-                <li>Urobek składowany min. <strong>0,6m</strong> od krawędzi wykopu.</li>
-            </ul>
-            <strong>3. Komunikacja:</strong>
-            <ul>
-                <li>Schodnie z <strong>obustronnymi poręczami</strong> do trzymania.</li>
-                <li>Kładki nad wykopami: szerokość min. 0,75m + barierki.</li>
-            </ul>
-            <div class="danger-box">
-                <strong>ALARM:</strong> Nigdy nie wchodź do wykopu bez zabezpieczonych ścian (szalunki/skarpowanie), jeśli ma więcej niż 1m głębokości!
-            </div>
         </div>
     </div>
 
     <div class="section">
         <div class="section-header bg-grey" onclick="toggle(this)">
-            <span>⚙️ AGREGATY I ZABEZPIECZENIA</span>
+            <span>⚙️ AGREGATY I ŚRODOWISKO</span>
             <span class="arrow">▼</span>
         </div>
         <div class="section-content">
             <ul>
-                <li><strong>Wanna wychwytowa:</strong> pod każdym agregatem/pompą (pojemność 110% paliwa).</li>
-                <li><strong>Sorbent:</strong> zestaw (Spill Kit) musi być "pod ręką" (nie w aucie 500m dalej).</li>
-                <li><strong>Gaśnica:</strong> proszkowa min. 6kg ABC z aktualną legalizacją (raz na rok).</li>
-                <li><strong>Apteczka ADR:</strong> zawsze w pobliżu prac z paliwem.</li>
+                <li>Wanna pod agregat (110% pojemności).</li>
+                <li>Sorbent / Spill Kit na miejscu.</li>
+                <li>Gaśnica z aktualną kontrolką (przegląd raz w roku).</li>
             </ul>
-            <div class="tip-box">
-                <strong>ZASADA 3 BRAKÓW:</strong> Brak wanny + brak sorbentu + brak gaśnicy = Niezgodność Krytyczna (M).
-            </div>
         </div>
     </div>
 
     <div class="section" style="border-bottom: none;">
         <div class="section-header bg-green" onclick="toggle(this)">
-            <span>✅ CHECKLISTA AUDYTORA (Szybki Obchód)</span>
+            <span>✅ CHECKLISTA KOŃCOWA</span>
             <span class="arrow">▼</span>
         </div>
         <div class="section-content">
             <ol>
-                <li>Czy przy agregacie jest <strong>wanna i gaśnica</strong>?</li>
-                <li>Czy wykop > 1m ma <strong>barierki i bortnice</strong>?</li>
-                <li>Czy schodnia do wykopu ma <strong>dwie poręcze</strong>?</li>
-                <li>Czy wykonawca ma <strong>papier na wodę</strong> (zgłoszenie/pozwolenie)?</li>
-                <li>Czy gaśnica ma <strong>zielone pole</strong> na manometrze?</li>
+                <li>Czy odpady budowlane są oddzielone od komunalnych?</li>
+                <li>Czy do każdego sprayu/oleju jest Karta Charakterystyki?</li>
+                <li>Czy schodnia do wykopu ma dwie barierki?</li>
+                <li>Czy wylot deszczówki do rzeki ma aktualne pozwolenie?</li>
             </ol>
         </div>
     </div>
@@ -251,13 +257,6 @@
 <script>
     function toggle(header) {
         const content = header.nextElementSibling;
-        const allContents = document.querySelectorAll('.section-content');
-        const allHeaders = document.querySelectorAll('.section-header');
-        
-        // Zamykanie innych sekcji (opcjonalne, jeśli chcesz mieć tylko jedną otwartą)
-        // allContents.forEach(c => { if(c !== content) c.style.display = 'none'; });
-        // allHeaders.forEach(h => { if(h !== header) h.classList.remove('is-open'); });
-
         if (content.style.display === "block") {
             content.style.display = "none";
             header.classList.remove('is-open');
