@@ -1,53 +1,272 @@
-<style>
-    .cat-wykopy .sub-header {
-        background-color: #fbc02d; /* Warning Yellow */
-        color: #000;
-    }
-    .cat-wykopy {
-        border-color: #fbc02d;
-    }
-    .danger-zone {
-        border: 1px dashed #f44336;
-        padding: 10px;
-        margin: 10px 0;
-        background: #fff5f5;
-        font-size: 0.9em;
-    }
-</style>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kompendium Audytora - Branża Elektroenergetyczna</title>
+    <style>
+        :root {
+            --blue-main: #0077b6;
+            --blue-light: #2196F3;
+            --orange: #FF9800;
+            --red: #f44336;
+            --grey: #607D8B;
+            --green: #4CAF50;
+            --yellow: #fbc02d;
+        }
 
-<div class="sub-section cat-wykopy">
-    <div class="sub-header" onclick="toggleSub(this)">
-        <span>🟨 GŁĘBOKIE WYKOPY (Zasady BHP i Wygradzania)</span>
-        <span class="arrow">▼</span>
-    </div>
-    <div class="sub-content">
-        <div style="margin-bottom:10px;">
-            <span class="law-ref">Rozp. Ministra Infrastruktury ws. BHP podczas robót budowlanych</span>
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f0f2f5;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        /* NAGŁÓWEK GŁÓWNY */
+        .main-title {
+            background: linear-gradient(135deg, #1a237e 0%, #0077b6 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+            font-size: 1.8em;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* STYL SEKCJI */
+        .section {
+            border-bottom: 1px solid #eee;
+        }
+
+        .section-header {
+            padding: 20px 25px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: bold;
+            transition: 0.3s;
+            color: white;
+        }
+
+        .section-header:hover { opacity: 0.9; }
+
+        .section-content {
+            display: none;
+            padding: 25px;
+            background: #fff;
+        }
+
+        /* KOLORY SEKCJI */
+        .bg-blue { background-color: var(--blue-light); }
+        .bg-orange { background-color: var(--orange); }
+        .bg-red { background-color: var(--red); }
+        .bg-grey { background-color: var(--grey); }
+        .bg-yellow { background-color: var(--yellow); color: #000 !important; }
+        .bg-green { background-color: var(--green); }
+
+        /* ELEMENTY WEWNĄTRZ */
+        ul { list-style: none; padding-left: 0; }
+        li { 
+            margin-bottom: 10px; 
+            padding-left: 25px; 
+            position: relative; 
+        }
+        li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--blue-main);
+            font-weight: bold;
+        }
+
+        .law-tag {
+            font-size: 0.8em;
+            background: #e1f5fe;
+            color: #01579b;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: monospace;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+
+        .tip-box {
+            border-left: 5px solid #ffd54f;
+            background: #fff9c4;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95em;
+        }
+
+        .danger-box {
+            border: 2px dashed var(--red);
+            background: #ffebee;
+            padding: 15px;
+            border-radius: 8px;
+            color: #b71c1c;
+            margin-top: 15px;
+        }
+
+        .arrow { transition: 0.3s; }
+        .is-open .arrow { transform: rotate(180deg); }
+
+        strong { color: #2c3e50; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="main-title">Przewodnik Audytora ENPROM</div>
+
+    <div class="section">
+        <div class="section-header bg-blue" onclick="toggle(this)">
+            <span>🟦 ZGŁOSZENIE WODNOPRAWNE (Małe oddziaływanie)</span>
+            <span class="arrow">▼</span>
         </div>
+        <div class="section-content">
+            <span class="law-tag">Art. 394 Prawo Wodne</span>
+            <ul>
+                <li><strong>Pomosty:</strong> szer. ≤ 3m, dł. ≤ 25m łącznej.</li>
+                <li><strong>Linie napowietrzne:</strong> energetyka/telekom nad wodami.</li>
+                <li><strong>Wykopy:</strong> trwałe odwadnianie wykopów budowlanych.</li>
+                <li><strong>Stawy:</strong> do 5000 m² i 3m głębokości (deszczówka/gruntówka).</li>
+                <li><strong>Rowy/Przepusty:</strong> przebudowa do 10m długości.</li>
+                <li><strong>Wody z wykopów:</strong> odprowadzanie z pompowań próbnych.</li>
+            </ul>
+            <div class="tip-box">
+                <strong>PAMIĘTAJ:</strong> Zgłoszenie to procedura uproszczona, ale brak sprzeciwu "Wód Polskich" jest wymagany przed startem prac!
+            </div>
+        </div>
+    </div>
 
-        <strong>1. Zabezpieczenie krawędzi (Wygrodzenie):</strong>
-        <ul>
-            <li><strong>Płotki ostrzegawcze:</strong> Wykop głębszy niż 1 metr musi być wygrodzony barierkami ochronnymi.</li>
-            <li><strong>Wymiary balustrady:</strong> Poręcz na wysokości 1,1 m, krawężnik (deska bortnica) o wysokości min. 15 cm oraz poprzeczka w połowie wysokości.</li>
-            <li><strong>Odległość:</strong> Barierki powinny stać w odległości min. 1 m od krawędzi wykopu.</li>
-        </ul>
+    <div class="section">
+        <div class="section-header bg-orange" onclick="toggle(this)">
+            <span>🟧 POZWOLENIE WODNOPRAWNE (Duże oddziaływanie)</span>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="section-content">
+            <span class="law-tag">Art. 399 Prawo Wodne</span>
+            <ul>
+                <li><strong>Usługi wodne:</strong> pobór wód, zrzut ścieków/deszczówki.</li>
+                <li><strong>Urządzenia wodne:</strong> wyloty, duże przepusty (>10m), mosty, jazy.</li>
+                <li><strong>Regulacja:</strong> prace w korytach rzek i potoków.</li>
+                <li><strong>Obniżenie wód:</strong> długotrwałe obniżenie poziomu wód podziemnych.</li>
+                <li><strong>Wały:</strong> każda ingerencja w wał przeciwpowodziowy.</li>
+            </ul>
+            <div class="tip-box" style="border-color: #2196F3; background: #e3f2fd;">
+                <strong>PROCES:</strong> Pozwolenie wymaga <strong>Operatu Wodnoprawnego</strong>. Sprawdź, czy wykonawca go posiada!
+            </div>
+        </div>
+    </div>
 
-        <strong>2. Skarpowanie i Rozparcia:</strong>
-        <ul>
-            <li><strong>Wykop pionowy:</strong> Dopuszczalny bez umocnień tylko w gruntach spoistych do głębokości 1 m (przy braku obciążeń obok).</li>
-            <li><strong>Bezpieczne nachylenie:</strong> Skarpowanie musi być dostosowane do rodzaju gruntu (np. dla piasku kąt nachylenia to zazwyczaj 1:1).</li>
-            <li><strong>Urobki:</strong> Składowanie ziemi z wykopu min. 0,6 m od krawędzi wykopu (klin odłamu gruntu).</li>
-        </ul>
+    <div class="section">
+        <div class="section-header bg-red" onclick="toggle(this)">
+            <span>🟥 USŁUGI WODNE (Zawsze pozwolenie)</span>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Wody opadowe:</strong> wprowadzanie deszczówki do wód lub rowów.</li>
+                <li><strong>Pobór wód:</strong> gruntowych lub powierzchniowych (np. do wierceń).</li>
+                <li><strong>Ścieki:</strong> wprowadzanie do ziemi lub wód.</li>
+                <li><strong>Retencja:</strong> piętrzenie i magazynowanie wód.</li>
+            </ul>
+        </div>
+    </div>
 
-        <strong>3. Komunikacja (Schodnie):</strong>
-        <ul>
-            <li><strong>Dwie barierki:</strong> Każda schodnia lub przejście nad wykopem (kładka) musi posiadać obustronne poręcze do trzymania się.</li>
-            <li><strong>Kładki:</strong> Muszą mieć szerokość min. 0,75 m i stabilne zamocowanie zapobiegające przesunięciu.</li>
-            <li><strong>Zejścia:</strong> Zabrania się wchodzenia do wykopu po rozporach lub elementach obudowy.</li>
-        </ul>
+    <div class="section">
+        <div class="section-header bg-yellow" onclick="toggle(this)">
+            <span>🟨 BHP: GŁĘBOKIE WYKOPY</span>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="section-content">
+            <strong>1. Wygrodzenia i barierki:</strong>
+            <ul>
+                <li>Wykop > 1m = <strong>obowiązkowa barierka</strong>.</li>
+                <li>Poręcz na wys. <strong>1,1m</strong> + deska krawężnikowa (bortnica) <strong>15cm</strong>.</li>
+                <li>Odsunięcie barierki min. <strong>1m</strong> od krawędzi.</li>
+            </ul>
+            <strong>2. Skarpowanie:</strong>
+            <ul>
+                <li>Kąt nachylenia skarpy dobrany do gruntu (bezpieczny klin odłamu).</li>
+                <li>Urobek składowany min. <strong>0,6m</strong> od krawędzi wykopu.</li>
+            </ul>
+            <strong>3. Komunikacja:</strong>
+            <ul>
+                <li>Schodnie z <strong>obustronnymi poręczami</strong> do trzymania.</li>
+                <li>Kładki nad wykopami: szerokość min. 0,75m + barierki.</li>
+            </ul>
+            <div class="danger-box">
+                <strong>ALARM:</strong> Nigdy nie wchodź do wykopu bez zabezpieczonych ścian (szalunki/skarpowanie), jeśli ma więcej niż 1m głębokości!
+            </div>
+        </div>
+    </div>
 
-        <div class="danger-zone">
-            <strong>🚨 UWAGA AUDYTORA:</strong> Sprawdź, czy przy krawędzi wykopu nie pracują ciężkie maszyny. Odległość pojazdu od krawędzi powinna być większa niż głębokość wykopu!
+    <div class="section">
+        <div class="section-header bg-grey" onclick="toggle(this)">
+            <span>⚙️ AGREGATY I ZABEZPIECZENIA</span>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="section-content">
+            <ul>
+                <li><strong>Wanna wychwytowa:</strong> pod każdym agregatem/pompą (pojemność 110% paliwa).</li>
+                <li><strong>Sorbent:</strong> zestaw (Spill Kit) musi być "pod ręką" (nie w aucie 500m dalej).</li>
+                <li><strong>Gaśnica:</strong> proszkowa min. 6kg ABC z aktualną legalizacją (raz na rok).</li>
+                <li><strong>Apteczka ADR:</strong> zawsze w pobliżu prac z paliwem.</li>
+            </ul>
+            <div class="tip-box">
+                <strong>ZASADA 3 BRAKÓW:</strong> Brak wanny + brak sorbentu + brak gaśnicy = Niezgodność Krytyczna (M).
+            </div>
+        </div>
+    </div>
+
+    <div class="section" style="border-bottom: none;">
+        <div class="section-header bg-green" onclick="toggle(this)">
+            <span>✅ CHECKLISTA AUDYTORA (Szybki Obchód)</span>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="section-content">
+            <ol>
+                <li>Czy przy agregacie jest <strong>wanna i gaśnica</strong>?</li>
+                <li>Czy wykop > 1m ma <strong>barierki i bortnice</strong>?</li>
+                <li>Czy schodnia do wykopu ma <strong>dwie poręcze</strong>?</li>
+                <li>Czy wykonawca ma <strong>papier na wodę</strong> (zgłoszenie/pozwolenie)?</li>
+                <li>Czy gaśnica ma <strong>zielone pole</strong> na manometrze?</li>
+            </ol>
         </div>
     </div>
 </div>
+
+<script>
+    function toggle(header) {
+        const content = header.nextElementSibling;
+        const allContents = document.querySelectorAll('.section-content');
+        const allHeaders = document.querySelectorAll('.section-header');
+        
+        // Zamykanie innych sekcji (opcjonalne, jeśli chcesz mieć tylko jedną otwartą)
+        // allContents.forEach(c => { if(c !== content) c.style.display = 'none'; });
+        // allHeaders.forEach(h => { if(h !== header) h.classList.remove('is-open'); });
+
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            header.classList.remove('is-open');
+        } else {
+            content.style.display = "block";
+            header.classList.add('is-open');
+        }
+    }
+</script>
+
+</body>
+</html>
