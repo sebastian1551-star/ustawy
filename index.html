@@ -1,148 +1,360 @@
-<!-- ◼◼◼ NOWA SEKCJA — ART. 27 USTAWA O ODPADACH ◼◼◼ -->
-<div class="category cat-techniczne">
-    <div class="category-header" onclick="toggle(this)">
-        ⚖️ ART. 27 – ODPOWIEDZIALNOŚĆ ZA ODPADY (USTAWA O ODPADACH) <span>▼</span>
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prawo Wodne - Przewodnik Graficzny</title>
+<style>
+    /* ◼◼◼ STYLE OGÓLNE — ODŚWIEŻENIE ◼◼◼ */
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: #f4f7f6;
+        padding: 20px;
+        color: #333;
+    }
+
+    /* Kontener głównej kategorii */
+    .water-law-container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+        overflow: hidden;
+        border: 1px solid #e0e0e0;
+    }
+
+    /* Główny nagłówek sekcji (zwinięty) */
+    .main-header {
+        background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+        color: white;
+        padding: 20px 25px;
+        font-size: 1.4em;
+        font-weight: bold;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background 0.3s;
+    }
+
+    .main-header:hover {
+        background: linear-gradient(135deg, #005f92 0%, #0096c7 100%);
+    }
+
+    .main-header .icon {
+        font-size: 1.3em;
+        margin-right: 10px;
+    }
+
+    .arrow {
+        transition: transform 0.3s;
+        font-size: 0.8em;
+    }
+
+    /* Główny kontener treści (ukryty domyślnie) */
+    .main-content {
+        display: none;
+        padding: 20px;
+    }
+
+    /* ◼◼◼ STYLE DLA PODSEKCJI (KOLOROWE PRZYCISKI) ◼◼◼ */
+    .sub-section {
+        margin-bottom: 15px;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px solid #ddd;
+    }
+
+    .sub-header {
+        padding: 15px 20px;
+        cursor: pointer;
+        font-weight: 600;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: opacity 0.2s;
+        color: white;
+    }
+
+    .sub-header:hover {
+        opacity: 0.9;
+    }
+
+    .sub-content {
+        display: none;
+        padding: 20px;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+    }
+
+    /* Kolorystyka podsekcji dla łatwego zapamiętywania */
+    /* 1. Zgłoszenie - Niebieski (Małe oddziaływanie) */
+    .cat-zgloszenie .sub-header {
+        background-color: #2196F3; /* Material Blue */
+    }
+    .cat-zgloszenie {
+        border-color: #2196F3;
+    }
+
+    /* 2. Pozwolenie - Pomarańczowy (Duże oddziaływanie) */
+    .cat-pozwolenie .sub-header {
+        background-color: #FF9800; /* Material Orange */
+    }
+    .cat-pozwolenie {
+        border-color: #FF9800;
+    }
+
+    /* 3. Usługi - Czerwony (Zawsze wymagane) */
+    .cat-uslugi .sub-header {
+        background-color: #f44336; /* Material Red */
+    }
+    .cat-uslugi {
+        border-color: #f44336;
+    }
+
+    /* 4. Powódź - Ciemny/Szary (Rygor) */
+    .cat-powodz .sub-header {
+        background-color: #607D8B; /* Material Blue Grey */
+    }
+    .cat-powodz {
+        border-color: #607D8B;
+    }
+
+    /* 5. Checklista - Zielony (Działanie) */
+    .cat-checklista {
+        border: 2px solid #4CAF50;
+        background-color: #f1f8e9;
+        margin-top: 25px;
+    }
+    .cat-checklista .sub-header {
+        background-color: #4CAF50;
+    }
+
+    /* Style wewnątrz treści */
+    .sub-content ul {
+        margin: 0;
+        padding-left: 20px;
+        list-style-type: none;
+    }
+
+    .sub-content ul li {
+        margin-bottom: 8px;
+        position: relative;
+        padding-left: 15px;
+    }
+
+    .sub-content ul li::before {
+        content: "•";
+        color: #0077b6;
+        font-weight: bold;
+        position: absolute;
+        left: 0;
+    }
+
+    .law-ref {
+        font-size: 0.85em;
+        color: #666;
+        background: #eee;
+        padding: 2px 6px;
+        border-radius: 4px;
+        font-family: monospace;
+    }
+
+    .tip-box {
+        background-color: #fff3cd;
+        border-left: 5px solid #ffeeba;
+        color: #856404;
+        padding: 10px 15px;
+        margin-top: 15px;
+        border-radius: 4px;
+        font-size: 0.9em;
+    }
+
+    /* Style dla Checklisty */
+    .check-list-content ol {
+        padding-left: 20px;
+    }
+    .check-list-content ol li {
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+    .check-list-content ol ul {
+        font-weight: 400;
+        margin-top: 5px;
+    }
+
+    /* Klasy pomocnicze do JS */
+    .is-open .arrow {
+        transform: rotate(180deg);
+    }
+</style>
+</head>
+<body>
+
+<div class="water-law-container">
+    
+    <div class="main-header" onclick="toggleMain(this)">
+        <div><span class="icon">🌊</span> PRAWO WODNE — KOMPENDIUM AUDYTORA</div>
+        <span class="arrow">▼</span>
     </div>
-    <div class="content">
-        <div class="item">
-            <span class="law-title">Art. 27 – Przekazywanie odpadów i przejęcie odpowiedzialności</span>
-            <div class="argument">
-                Kluczowy artykuł definiujący <b>kto odpowiada za odpady i kiedy odpowiedzialność przechodzi na kolejny podmiot</b>. 
-                Źródła: Dz.U. 2023.1587 t.j. (wersja obowiązująca od 2026 r.). [1](https://sip.lex.pl/akty-prawne/dzu-dziennik-ustaw/odpady-17940659/art-27)[2](https://lexlege.pl/ustawa-o-odpadach/art-27/)[3](https://standardyprawa.pl/akt/290/art/36871)
+
+    <div class="main-content" id="waterLawContent">
+
+        <p style="margin-top:0; color:#666;">Kliknij poniższe, kolorowe sekcje, aby poznać szczegóły wymagań.</p>
+
+        <div class="sub-section cat-zgloszenie">
+            <div class="sub-header" onclick="toggleSub(this)">
+                <span>🟦 ZGŁOSZENIE WODNOPRAWNE (Mniejsze oddziaływanie)</span>
+                <span class="arrow">▼</span>
             </div>
-
-            <ul>
-                <li><b>Wytwórca odpadów</b> zawsze odpowiada za odpady, które wytworzył. (ust. 1)</li>
-                <li>Może przekazać odpady tylko podmiotom posiadającym:
-                    <ul>
-                        <li>zezwolenie na <b>zbieranie</b> lub <b>przetwarzanie</b> odpadów,</li>
-                        <li>koncesję / pozwolenie zintegrowane,</li>
-                        <li>wpis do właściwego działu rejestru BDO. (ust. 2)</li>
-                    </ul>
-                </li>
-                <li><b>Odpowiedzialność przechodzi</b> dopiero z chwilą przekazania odpadów do podmiotu z decyzjami wymienionymi w ust. 2. (ust. 3)</li>
-                <li>Jeśli nie da się ustalić wytwórcy – odpowiada aktualny lub poprzedni posiadacz. (ust. 3a)</li>
-                <li>Transportujący nie przejmuje odpowiedzialności – posiadacz ją zachowuje do czasu faktycznego przejęcia odpadów przez kolejny uprawniony podmiot. (ust. 4)</li>
-                <li>Wytwórca odpadów niebezpiecznych jest zwolniony dopiero po przekazaniu do finalnego procesu odzysku/unieszkodliwiania. (ust. 3b)</li>
-            </ul>
-
-            <span class="tip">Praktyka: przy każdej umowie podwykonawczej w OZE wymagaj decyzji środowiskowych + weryfikacji wpisu BDO.</span>
-        </div>
-    </div>
-</div>
-
-
-
-<!-- ◼◼◼ NOWA SEKCJA — ART. 101a ODPADY BUDOWLANE ◼◼◼ -->
-<div class="category cat-budowlane">
-    <div class="category-header" onclick="toggle(this)">
-        🧱 ART. 101a – ODPADY BUDOWLANE I ROZBIÓRKOWE <span>▼</span>
-    </div>
-    <div class="content">
-        <div class="item">
-            <span class="law-title">Art. 101a – obowiązek segregacji na 6 frakcji</span>
-            <div class="argument">
-                Od 1.01.2025 r. obowiązuje prawny obowiązek segregacji wszystkich odpadów budowlanych i rozbiórkowych na wskazane frakcje. 
-                Dotyczy również inwestycji OZE i infrastruktury elektroenergetycznej.  
-                Źródło: Dz.U. 2023.1587 t.j. [4](https://sip.lex.pl/akty-prawne/dzu-dziennik-ustaw/odpady-17940659/art-101-a)
+            <div class="sub-content">
+                <div style="margin-bottom:10px;">
+                    <span class="law-ref">Art. 394 PW (Dz.U.2025.960)</span>
+                </div>
+                <ul>
+                    <li><strong>Pomosty:</strong> szerokość ≤ 3 m, długość ≤ 25 m.</li>
+                    <li><strong>Postój:</strong> barki, statki mieszkalne lub usługowe.</li>
+                    <li><strong>Linie napowietrzne:</strong> energetyczne i telekom. nad wodami.</li>
+                    <li><strong>Kąpieliska:</strong> wykonanie kąpieliska lub miejsca okazjonalnej kąpieli.</li>
+                    <li><strong>Wykopy budowlane:</strong> trwałe odwadnianie.</li>
+                    <li><strong>Roboty w wodach:</strong> lub mogące zmienić stan wód podziemnych.</li>
+                    <li><strong>Urządzenia odwadniające:</strong> oddziaływanie <strong style="color:#d32f2f;">nie wykracza poza teren inwestora</strong>.</li>
+                    <li><strong>Pompownia:</strong> odprowadzanie wód z wykopów i próbnych pompowań.</li>
+                    <li><strong>Stawy:</strong> ≤ 5000 m² i ≤ 3 m głębokości (wody opadowe/gruntowe).</li>
+                    <li><strong>Rowy:</strong> przebudowa (przepusty) do 10 m długości.</li>
+                    <li><strong>Pas drogowy:</strong> przebudowa/odbudowa odwodnień.</li>
+                    <li><strong>Przydomowe oczyszczalnie:</strong> urządzenia do wprowadzania ścieków.</li>
+                </ul>
+                <div class="tip-box">
+                    <strong>⚠️ ZASADA ŁĄCZENIA:</strong> Jeżeli inwestycja wymaga jednocześnie zgłoszenia i pozwolenia — Wody Polskie wydają <strong>jedno pozwolenie</strong>.
+                </div>
             </div>
-
-            <ul>
-                <li>Obowiązkowa segregacja na min. <b>6 frakcji</b>:
-                    <b>drewno, metale, szkło, tworzywa sztuczne, gips, odpady mineralne (beton, cegły, ceramika, kamienie).</b>
-                </li>
-                <li>Brak obowiązku segregacji tylko gdy:
-                    <ul>
-                        <li>nie jest to technologicznie możliwe,</li>
-                        <li>lub brak segregacji wciąż pozwala na recykling / odzysk.</li>
-                    </ul>
-                </li>
-                <li>Można zlecić segregację tylko podmiotowi z art. 27 ust. 2 (zezwolenie na przetwarzanie). Umowa musi być pisemna.</li>
-                <li><b>Odpowiedzialność solidarna:</b> wytwórca + następny posiadacz + podmiot wykonujący usługę.</li>
-            </ul>
-
-            <span class="tip">Na audytach OZE: wymagaj pokazania umowy segregacyjnej oraz decyzji na przetwarzanie (nie tylko BDO).</span>
         </div>
-    </div>
-</div>
 
-
-
-<!-- ◼◼◼ NOWA SEKCJA — SEGREGACJA KOMUNALNA ◼◼◼ -->
-<div class="category cat-komunalne">
-    <div class="category-header" onclick="toggle(this)">
-        ♻️ SEGREGACJA ODPADÓW KOMUNALNYCH – KOLORY I ZASADY <span>▼</span>
-    </div>
-    <div class="content">
-        <div class="item">
-            <span class="law-title">Jednolity System Segregacji Odpadów (JSSO)</span>
-            <div class="argument">
-                W całej Polsce obowiązuje system pięciu podstawowych frakcji.  
-                Źródła: MKiŚ, system JSSO. [5](https://www.gov.pl/web/klimat/segregacjaodpadow)[6](https://www.pawlas.eu/post/segregacja-%C5%9Bmieci)
+        <div class="sub-section cat-pozwolenie">
+            <div class="sub-header" onclick="toggleSub(this)">
+                <span>🟧 POZWOLENIE WODNOPRAWNE (Duże oddziaływanie)</span>
+                <span class="arrow">▼</span>
             </div>
-
-            <table>
-                <tr><th>Kolor</th><th>Frakcja</th><th>Co wrzucać</th></tr>
-                <tr><td>Niebieski</td><td>Papier</td><td>karton, papier biurowy, gazety</td></tr>
-                <tr><td>Żółty</td><td>Metale i tworzywa sztuczne</td><td>PET, puszki, folie, opakowania wielomateriałowe</td></tr>
-                <tr><td>Zielony</td><td>Szkło</td><td>butelki i słoiki</td></tr>
-                <tr><td>Brązowy</td><td>Bio</td><td>odpady organiczne, trawa, gałęzie</td></tr>
-                <tr><td>Czarny / Szary</td><td>Zmieszane</td><td>resztki niepodlegające odzyskowi</td></tr>
-            </table>
-
-            <ul>
-                <li>Nowa frakcja: <b>Tekstylia</b> – zbierane selektywnie od 2025 r., często w PSZOK; nie wrzucać do zmieszanych. [8](https://forsal.pl/nieruchomosci/aktualnosci/artykuly/10565117,nowy-kolor-pojemnikow-na-odpady-od-stycznia-2026-jakie-smieci-bedziemy-do-nich-wrzucac.html)</li>
-                <li>Gminy mogą stosować dodatkowe kolory (np. fioletowy na tekstylia). [8](https://forsal.pl/nieruchomosci/aktualnosci/artykuly/10565117,nowy-kolor-pojemnikow-na-odpady-od-stycznia-2026-jakie-smieci-bedziemy-do-nich-wrzucac.html)</li>
-                <li>Podłoże pod pojemnikami powinno być stabilne i utwardzone wg praktyk gmin (beton, kostka). [7](https://polskawpraktyce.pl/kolory-pojemnikow-segregacja.html)</li>
-            </ul>
-
-            <span class="tip">Na farmach PV najczęściej stosuje się zestaw: żółty, niebieski, zielony, brązowy, czarny + kontenery na kable i złom (17 04 11 / 17 04 05).</span>
-        </div>
-    </div>
-</div>
-
-
-
-<!-- ◼◼◼ NOWA SEKCJA — WANNY OCIEKOWE ◼◼◼ -->
-<div class="category cat-techniczne">
-    <div class="category-header" onclick="toggle(this)">
-        🛢️ WANNY OCIEKOWE – KIEDY WYMAGANE & JAKA POJEMNOŚĆ <span>▼</span>
-    </div>
-    <div class="content">
-        <div class="item">
-            <span class="law-title">Obowiązek zabezpieczenia przed wyciekiem substancji</span>
-            <div class="argument">
-                Wanny ociekowe są wymagane zawsze przy magazynowaniu odpadów / substancji mogących zanieczyścić glebę lub wodę, w szczególności olejów, chemikaliów oraz odpadów niebezpiecznych.  
-                (Na podstawie zasad ochrony środowiska i praktyk kontrolnych WIOŚ – brak zmian legislacyjnych w latach 2023‑2026).
+            <div class="sub-content">
+                <div style="margin-bottom:10px;">
+                    <span class="law-ref">Art. 399 PW i nast.</span>
+                </div>
+                <ul>
+                    <li><strong>Usługi wodne:</strong> (pełny katalog w sekcji poniżej 🟥).</li>
+                    <li><strong>Szczególne korzystanie:</strong> z wód wykraczające poza zwykłe/powszechne.</li>
+                    <li><strong>Wody podziemne:</strong> długotrwałe obniżenie poziomu.</li>
+                    <li><strong>Rekultywacja:</strong> wód powierzchniowych lub podziemnych.</li>
+                    <li><strong>Urządzenia wodne:</strong> wykonanie (np. przepusty > 10 m, jazy, wyloty, mosty).</li>
+                    <li><strong>Regulacja:</strong> wód, zabudowa potoków, zmiana koryt.</li>
+                    <li><strong>Ukształtowanie terenu:</strong> zmiana w pobliżu wód wpływająca na przepływ.</li>
+                    <li><strong>Infrastruktura:</strong> mosty, rurociągi, obiekty przez wody/wały.</li>
+                </ul>
+                <div class="tip-box" style="background-color:#e3f2fd; border-color:#90caf9; color:#0d47a1;">
+                    <strong>ℹ️ KOLEJNOŚĆ:</strong> Pozwolenie wodnoprawne jest zwykle wymagane <strong>przed</strong> pozwoleniem na budowę.
+                </div>
             </div>
-
-            <ul>
-                <li><b>Kiedy obowiązkowe?</b>
-                    <ul>
-                        <li>magazynowanie odpadów niebezpiecznych (np. 15 02 02* – sorbenty skażone olejem),</li>
-                        <li>składowanie oleju transformatorowego, hydraulicznego, smarów,</li>
-                        <li>odpady płynne lub cieknące,</li>
-                        <li>IBC, beczki, kanistry → niezależnie od wielkości.</li>
-                    </ul>
-                </li>
-
-                <li><b>Minimalna pojemność wanny:</b>
-                    <ul>
-                        <li>co najmniej 110% największego pojemnika LUB</li>
-                        <li>25% całkowitej objętości magazynowanych substancji — stosuje się większą wartość.</li>
-                    </ul>
-                </li>
-
-                <li><b>Typowe wymagania praktyczne dla budów / PV:</b>
-                    <ul>
-                        <li>beczka 200 l → wanna min. 220 l,</li>
-                        <li>mały transformator olejowy (ok. 100–150 l oleju) → wanna min. 165 l,</li>
-                        <li>zestawy sorbentów → szczelne kuwety ociekowe.</li>
-                    </ul>
-                </li>
-            </ul>
-
-            <span class="tip">Wanny ociekowe muszą być szczelne, odporne chemicznie i ustawione na stabilnym podłożu. Idealne: stal ocynkowana lub PE-HD.</span>
         </div>
-    </div>
-</div>
+
+        <div class="sub-section cat-uslugi">
+            <div class="sub-header" onclick="toggleSub(this)">
+                <span>🟥 USŁUGI WODNE (Zawsze wymagają pozwolenia)</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="sub-content">
+                <ul>
+                    <li>Pobór wód podziemnych lub powierzchniowych.</li>
+                    <li>Wprowadzanie ścieków do wód lub ziemi.</li>
+                    <li><strong>Wody opadowe:</strong> wprowadzanie wód deszczowych/roztopowych do wód lub urządzeń wodnych.</li>
+                    <li>Piętrzenie i retencjonowanie wód.</li>
+                    <li>Energetyka wodna.</li>
+                    <li>Wykorzystywanie wód do celów chłodniczych/technologicznych.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="sub-section cat-powodz">
+            <div class="sub-header" onclick="toggleSub(this)">
+                <span>🛑 OBSZARY ZAGROŻENIA POWODZIĄ (Rygor)</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="sub-content">
+                <div style="margin-bottom:10px;">
+                    <span class="law-ref">Art. 77 i 176 PW</span>
+                </div>
+                <p>Działania na tych terenach wymagają szczególnej kontroli.</p>
+                <ul>
+                    <li>Obowiązują <strong>zakazy lub drastyczne ograniczenia</strong> budów.</li>
+                    <li>Pozwolenie może być wymagane nawet dla prac drobnych (np. urządzenia pomiarowe).</li>
+                    <li>Każda ingerencja w wały przeciwpowodziowe wymaga uzgodnienia.</li>
+                </ul>
+                <div class="tip-box" style="background-color:#fce4ec; border-color:#f8bbd0; color:#880e4f;">
+                    <strong>🕵️‍♀️ WSKAZÓWKA:</strong> Zawsze pytaj o <strong>Mapy Zagrożenia Powodziowego (MZP)</strong> i decyzję o dopuszczalności lokalizacji.
+                </div>
+            </div>
+        </div>
+
+        <div class="sub-section cat-checklista">
+            <div class="sub-header" onclick="toggleSub(this)">
+                <span>✅ CHECK‑LISTA AUDYTORA (Szybkie pytania)</span>
+                <span class="arrow">▼</span>
+            </div>
+            <div class="sub-content check-list-content">
+                <ol>
+                    <li>Czy inwestycja obejmuje:
+                        <ul>
+                            <li>– odwadnianie wykopów? (jeśli > 60 dni → sprawdzić: zgłoszenie)</li>
+                            <li>– przepusty, rowy, stawy, odwodnienia? (→ sprawdzić art. 394)</li>
+                            <li>– wyloty, odprowadzanie wód do rowów/odbiorników? (→ zwykle pozwolenie)</li>
+                            <li>– prace w pobliżu cieków / koryt? (→ pozwolenie)</li>
+                        </ul>
+                    </li>
+                    <li>Dokumenty do okazania:
+                        <ul>
+                            <li>– Zgłoszenie wodnoprawne (z potwierdzeniem przyjęcia).</li>
+                            <li>– Pozwolenie wodnoprawne.</li>
+                            <li>– Mapa projektowa z naniesionymi urządzeniami wodnymi.</li>
+                            <li>– Operat wodnoprawny (podstawa pozwolenia).</li>
+                            <li>– Decyzja dla obszaru zagrożenia powodzią.</li>
+                        </ul>
+                    </li>
+                    <li>Zasada ogólna:
+                        <p style="font-weight:400; background:#eee; padding:10px; border-radius:4px;">Jeśli coś <i>ingeruje w wodę lub w grunt oddziałujący na wodę</i> → pytasz o dokumentację wodnoprawną.</p>
+                    </li>
+                </ol>
+            </div>
+        </div>
+
+    </div> </div> <script>
+    // Skrypt do obsługi rozwijania sekcji głównej
+    function toggleMain(header) {
+        const content = document.getElementById('waterLawContent');
+        const container = header.parentElement;
+        
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            container.classList.remove('is-open');
+        } else {
+            content.style.display = "block";
+            container.classList.add('is-open');
+        }
+    }
+
+    // Skrypt do obsługi rozwijania podsekcji (kolorowych przycisków)
+    function toggleSub(header) {
+        const content = header.nextElementSibling;
+        const container = header.parentElement;
+        
+        if (content.style.display === "block") {
+            content.style.display = "none";
+            container.classList.remove('is-open');
+        } else {
+            content.style.display = "block";
+            container.classList.add('is-open');
+        }
+    }
+</script>
+
+</body>
+</html>
