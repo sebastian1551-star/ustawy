@@ -1,158 +1,148 @@
-<!DOCTYPE html>
-<html lang="pl">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audytor OZE: Prawo i Standardy (2026)</title>
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.5; color: #333; max-width: 950px; margin: 0 auto; padding: 15px; background-color: #f0f2f5; }
-        h1 { color: #1a5276; text-align: center; font-size: 1.4em; border-bottom: 3px solid #1a5276; padding-bottom: 10px; margin-bottom: 20px; }
-        .category { background: #fff; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); margin-bottom: 12px; border-left: 6px solid #ccc; overflow: hidden; }
-        
-        .cat-komunalne { border-left-color: #27ae60; }
-        .cat-budowlane { border-left-color: #f39c12; }
-        .cat-niebezpieczne { border-left-color: #c0392b; }
-        .cat-techniczne { border-left-color: #2980b9; }
-        .cat-wodne { border-left-color: #00ced1; }
-        .cat-kody { border-left-color: #8e44ad; }
-
-        .category-header { padding: 15px; cursor: pointer; font-weight: bold; display: flex; justify-content: space-between; align-items: center; font-size: 1.1em; transition: 0.3s; }
-        .cat-komunalne .category-header { background: #eafaf1; color: #1e8449; }
-        .cat-budowlane .category-header { background: #fef5e7; color: #af601a; }
-        .cat-niebezpieczne .category-header { background: #f9ebea; color: #922b21; }
-        .cat-techniczne .category-header { background: #ebf5fb; color: #21618c; }
-        .cat-wodne .category-header { background: #e0ffff; color: #008b8b; }
-        .cat-kody .category-header { background: #f5eef8; color: #6c3483; }
-
-        .content { padding: 0 15px; display: none; background: white; padding-bottom: 15px; }
-        .item { border-bottom: 1px solid #eee; padding: 15px 0; }
-        .law-title { font-weight: bold; color: #2980b9; text-decoration: none; display: block; margin-bottom: 6px; }
-        .argument { background: #f8f9fa; border-left: 4px solid #34495e; padding: 10px; margin: 10px 0; font-size: 0.9em; color: #2c3e50; }
-        .tag { font-size: 0.7em; padding: 2px 8px; border-radius: 4px; background: #ebf5fb; color: #2e86c1; font-weight: bold; text-transform: uppercase; margin-right: 5px; border: 1px solid #d6eaf8; }
-        .tip { font-size: 0.85em; color: #666; margin-top: 5px; display: block; font-style: italic; }
-        .check-list { background: #fff4f4; border: 1px solid #f5b7b1; padding: 10px; border-radius: 5px; margin-top: 10px; }
-        
-        table { width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.85em; }
-        table th, table td { border: 1px solid #ddd; padding: 8px; text-align: left; }
-        table th { background-color: #f2f2f2; }
-    </style>
-</head>
-<body>
-
-    <h1>📋 Audytor OZE: Prawo i Kontrola Podwykonawców</h1>
-
-    <div class="category cat-komunalne">
-        <div class="category-header" onclick="toggle(this)">
-            🏠 ODPADY KOMUNALNE & WERYFIKACJA ODBIORCY <span>▼</span>
-        </div>
-        <div class="content">
-            <div class="item">
-                <span class="law-title">Dwa systemy odbioru (Kluczowe na audycie!)</span>
-                <div class="argument">
-                    Musisz ustalić, na jakiej podstawie PreZero (lub inny podmiot) zabiera śmieci:
-                </div>
-                <ul>
-                    <li><b>Opcja A: System Gminny</b> – Budowa złożyła deklarację do Gminy. Opłata jest zmienna (zależna od deklaracji). Odbiorca jest wyznaczony przez Gminę.</li>
-                    <li><b>Opcja B: Umowa Komercyjna</b> – Wykonawca sam podpisał umowę. <b>WYMAGANA KONTROLA BDO!</b></li>
-                </ul>
-            </div>
-            
-            <div class="check-list">
-                <strong>⚠️ Procedura Kontrolna Odbiorcy:</strong><br>
-                1. Sprawdź <b>wpis do BDO</b> firmy odbierającej (np. PreZero).<br>
-                2. Sprawdź <b>pozwolenie na transport</b> odpadów.<br>
-                3. Sprawdź <b>pozwolenie na zbieranie/przetwarzanie</b> (miejsce, do którego jadą odpady).<br>
-                <span class="tip">Brak sprawdzenia uprawnień kontrahenta to ryzyko "odpowiedzialności solidarnej" za nielegalne zagospodarowanie odpadów!</span>
+<!-- ◼◼◼ NOWA SEKCJA — ART. 27 USTAWA O ODPADACH ◼◼◼ -->
+<div class="category cat-techniczne">
+    <div class="category-header" onclick="toggle(this)">
+        ⚖️ ART. 27 – ODPOWIEDZIALNOŚĆ ZA ODPADY (USTAWA O ODPADACH) <span>▼</span>
+    </div>
+    <div class="content">
+        <div class="item">
+            <span class="law-title">Art. 27 – Przekazywanie odpadów i przejęcie odpowiedzialności</span>
+            <div class="argument">
+                Kluczowy artykuł definiujący <b>kto odpowiada za odpady i kiedy odpowiedzialność przechodzi na kolejny podmiot</b>. 
+                Źródła: Dz.U. 2023.1587 t.j. (wersja obowiązująca od 2026 r.). [1](https://sip.lex.pl/akty-prawne/dzu-dziennik-ustaw/odpady-17940659/art-27)[2](https://lexlege.pl/ustawa-o-odpadach/art-27/)[3](https://standardyprawa.pl/akt/290/art/36871)
             </div>
 
-            <div class="item">
-                <span class="law-title">Różnica 15 01 01 (Papier) vs 15 01 02 (Folia)</span>
-                <p>Osobna segregacja w żółtym i niebieskim koszu. Zakaz mieszania opakowań wielomateriałowych bez ich rozdzielenia.</p>
-            </div>
+            <ul>
+                <li><b>Wytwórca odpadów</b> zawsze odpowiada za odpady, które wytworzył. (ust. 1)</li>
+                <li>Może przekazać odpady tylko podmiotom posiadającym:
+                    <ul>
+                        <li>zezwolenie na <b>zbieranie</b> lub <b>przetwarzanie</b> odpadów,</li>
+                        <li>koncesję / pozwolenie zintegrowane,</li>
+                        <li>wpis do właściwego działu rejestru BDO. (ust. 2)</li>
+                    </ul>
+                </li>
+                <li><b>Odpowiedzialność przechodzi</b> dopiero z chwilą przekazania odpadów do podmiotu z decyzjami wymienionymi w ust. 2. (ust. 3)</li>
+                <li>Jeśli nie da się ustalić wytwórcy – odpowiada aktualny lub poprzedni posiadacz. (ust. 3a)</li>
+                <li>Transportujący nie przejmuje odpowiedzialności – posiadacz ją zachowuje do czasu faktycznego przejęcia odpadów przez kolejny uprawniony podmiot. (ust. 4)</li>
+                <li>Wytwórca odpadów niebezpiecznych jest zwolniony dopiero po przekazaniu do finalnego procesu odzysku/unieszkodliwiania. (ust. 3b)</li>
+            </ul>
+
+            <span class="tip">Praktyka: przy każdej umowie podwykonawczej w OZE wymagaj decyzji środowiskowych + weryfikacji wpisu BDO.</span>
         </div>
     </div>
+</div>
 
-    <div class="category cat-kody">
-        <div class="category-header" onclick="toggle(this)">
-            🔢 SŁOWNIK KODÓW (15 i 17) - BRANŻA OZE <span>▼</span>
-        </div>
-        <div class="content">
-            <div class="item">
-                <strong>Odpady Opakowaniowe i Sorbenty (Grupa 15)</strong>
-                <table>
-                    <tr><th>Kod</th><th>Opis / Zastosowanie OZE</th></tr>
-                    <tr><td>15 01 01</td><td>Karton po inwerterach, papier biurowy</td></tr>
-                    <tr><td>15 01 02</td><td>Folia stretch z palet, folie ochronne paneli</td></tr>
-                    <tr><td>15 01 03</td><td>Palety drewniane, bębny kablowe drewniane</td></tr>
-                    <tr><td>15 02 02*</td><td><b>Sorbenty skażone</b> (po wycieku oleju z trafo)</td></tr>
-                </table>
+
+
+<!-- ◼◼◼ NOWA SEKCJA — ART. 101a ODPADY BUDOWLANE ◼◼◼ -->
+<div class="category cat-budowlane">
+    <div class="category-header" onclick="toggle(this)">
+        🧱 ART. 101a – ODPADY BUDOWLANE I ROZBIÓRKOWE <span>▼</span>
+    </div>
+    <div class="content">
+        <div class="item">
+            <span class="law-title">Art. 101a – obowiązek segregacji na 6 frakcji</span>
+            <div class="argument">
+                Od 1.01.2025 r. obowiązuje prawny obowiązek segregacji wszystkich odpadów budowlanych i rozbiórkowych na wskazane frakcje. 
+                Dotyczy również inwestycji OZE i infrastruktury elektroenergetycznej.  
+                Źródło: Dz.U. 2023.1587 t.j. [4](https://sip.lex.pl/akty-prawne/dzu-dziennik-ustaw/odpady-17940659/art-101-a)
             </div>
-            <div class="item">
-                <strong>Odpady Budowlane i Infrastruktura (Grupa 17)</strong>
-                <table>
-                    <tr><th>Kod</th><th>Opis / Zastosowanie OZE</th></tr>
-                    <tr><td>17 04 05</td><td><b>Bednarka</b>, stalowe konstrukcje stołów PV</td></tr>
-                    <tr><td>17 04 11</td><td>Kable miedziane i aluminiowe (ścinki, uszkodzone)</td></tr>
-                    <tr><td>17 05 03*</td><td>Ziemia skażona paliwem/olejem</td></tr>
-                    <tr><td>17 01 01</td><td>Gruz betonowy (fundamenty, płyty drogowe)</td></tr>
-                    <tr><td>17 02 03</td><td>Rury osłonowe, peszle, rury typu AROT</td></tr>
-                </table>
-            </div>
+
+            <ul>
+                <li>Obowiązkowa segregacja na min. <b>6 frakcji</b>:
+                    <b>drewno, metale, szkło, tworzywa sztuczne, gips, odpady mineralne (beton, cegły, ceramika, kamienie).</b>
+                </li>
+                <li>Brak obowiązku segregacji tylko gdy:
+                    <ul>
+                        <li>nie jest to technologicznie możliwe,</li>
+                        <li>lub brak segregacji wciąż pozwala na recykling / odzysk.</li>
+                    </ul>
+                </li>
+                <li>Można zlecić segregację tylko podmiotowi z art. 27 ust. 2 (zezwolenie na przetwarzanie). Umowa musi być pisemna.</li>
+                <li><b>Odpowiedzialność solidarna:</b> wytwórca + następny posiadacz + podmiot wykonujący usługę.</li>
+            </ul>
+
+            <span class="tip">Na audytach OZE: wymagaj pokazania umowy segregacyjnej oraz decyzji na przetwarzanie (nie tylko BDO).</span>
         </div>
     </div>
+</div>
 
-    <div class="category cat-niebezpieczne">
-        <div class="category-header" onclick="toggle(this)">
-            ⚡ TRANSFORMATORY, SORBENTY I ADR <span>▼</span>
-        </div>
-        <div class="content">
-            <div class="item">
-                <span class="law-title">Zestaw awaryjny przy Transformatorze</span>
-                <div class="argument">W przypadku transformatora olejowego, na miejscu <b>MUSI</b> znajdować się:</div>
-                <ul>
-                    <li><b>Sorbent sypki lub maty:</b> Minimalna ilość dobrana do skali potencjalnego wycieku.</li>
-                    <li><b>Apteczka ADR / Zestaw Environmental:</b> Łopata iskrząca, arkusz uszczelniający studzienki, pojemnik na odpady niebezpieczne.</li>
-                </ul>
-                <span class="tip">Brak zabezpieczeń = rażące zaniedbanie ochrony wód podziemnych.</span>
+
+
+<!-- ◼◼◼ NOWA SEKCJA — SEGREGACJA KOMUNALNA ◼◼◼ -->
+<div class="category cat-komunalne">
+    <div class="category-header" onclick="toggle(this)">
+        ♻️ SEGREGACJA ODPADÓW KOMUNALNYCH – KOLORY I ZASADY <span>▼</span>
+    </div>
+    <div class="content">
+        <div class="item">
+            <span class="law-title">Jednolity System Segregacji Odpadów (JSSO)</span>
+            <div class="argument">
+                W całej Polsce obowiązuje system pięciu podstawowych frakcji.  
+                Źródła: MKiŚ, system JSSO. [5](https://www.gov.pl/web/klimat/segregacjaodpadow)[6](https://www.pawlas.eu/post/segregacja-%C5%9Bmieci)
             </div>
+
+            <table>
+                <tr><th>Kolor</th><th>Frakcja</th><th>Co wrzucać</th></tr>
+                <tr><td>Niebieski</td><td>Papier</td><td>karton, papier biurowy, gazety</td></tr>
+                <tr><td>Żółty</td><td>Metale i tworzywa sztuczne</td><td>PET, puszki, folie, opakowania wielomateriałowe</td></tr>
+                <tr><td>Zielony</td><td>Szkło</td><td>butelki i słoiki</td></tr>
+                <tr><td>Brązowy</td><td>Bio</td><td>odpady organiczne, trawa, gałęzie</td></tr>
+                <tr><td>Czarny / Szary</td><td>Zmieszane</td><td>resztki niepodlegające odzyskowi</td></tr>
+            </table>
+
+            <ul>
+                <li>Nowa frakcja: <b>Tekstylia</b> – zbierane selektywnie od 2025 r., często w PSZOK; nie wrzucać do zmieszanych. [8](https://forsal.pl/nieruchomosci/aktualnosci/artykuly/10565117,nowy-kolor-pojemnikow-na-odpady-od-stycznia-2026-jakie-smieci-bedziemy-do-nich-wrzucac.html)</li>
+                <li>Gminy mogą stosować dodatkowe kolory (np. fioletowy na tekstylia). [8](https://forsal.pl/nieruchomosci/aktualnosci/artykuly/10565117,nowy-kolor-pojemnikow-na-odpady-od-stycznia-2026-jakie-smieci-bedziemy-do-nich-wrzucac.html)</li>
+                <li>Podłoże pod pojemnikami powinno być stabilne i utwardzone wg praktyk gmin (beton, kostka). [7](https://polskawpraktyce.pl/kolory-pojemnikow-segregacja.html)</li>
+            </ul>
+
+            <span class="tip">Na farmach PV najczęściej stosuje się zestaw: żółty, niebieski, zielony, brązowy, czarny + kontenery na kable i złom (17 04 11 / 17 04 05).</span>
         </div>
     </div>
+</div>
 
-    <div class="category cat-wodne">
-        <div class="category-header" onclick="toggle(this)">
-            💧 PRAWO WODNE NA BUDOWIE <span>▼</span>
-        </div>
-        <div class="content">
-            <div class="item">
-                <a href="https://isap.sejm.gov.pl/isap.nsf/DocDetails.xsp?id=WDU20170001566" target="_blank" class="law-title">🔗 Ustawa Prawo Wodne</a>
-                <span class="tag">Pozwolenia</span>
-                <ul>
-                    <li><b>Odwodnienie wykopów:</b> Wymagane, gdy proces trwa > 60 dni.</li>
-                    <li><b>Pobór wody ze studni:</b> Wymagany powyżej 5 m3/dobę (pobór technologiczny).</li>
-                    <li><b>Urządzenia wodne:</b> Każdy przepust pod drogą dojazdową do farmy PV.</li>
-                    <li><b>Zrzut ścieków:</b> Odprowadzanie wód z odwadniania do rowu obcego.</li>
-                </ul>
+
+
+<!-- ◼◼◼ NOWA SEKCJA — WANNY OCIEKOWE ◼◼◼ -->
+<div class="category cat-techniczne">
+    <div class="category-header" onclick="toggle(this)">
+        🛢️ WANNY OCIEKOWE – KIEDY WYMAGANE & JAKA POJEMNOŚĆ <span>▼</span>
+    </div>
+    <div class="content">
+        <div class="item">
+            <span class="law-title">Obowiązek zabezpieczenia przed wyciekiem substancji</span>
+            <div class="argument">
+                Wanny ociekowe są wymagane zawsze przy magazynowaniu odpadów / substancji mogących zanieczyścić glebę lub wodę, w szczególności olejów, chemikaliów oraz odpadów niebezpiecznych.  
+                (Na podstawie zasad ochrony środowiska i praktyk kontrolnych WIOŚ – brak zmian legislacyjnych w latach 2023‑2026).
             </div>
+
+            <ul>
+                <li><b>Kiedy obowiązkowe?</b>
+                    <ul>
+                        <li>magazynowanie odpadów niebezpiecznych (np. 15 02 02* – sorbenty skażone olejem),</li>
+                        <li>składowanie oleju transformatorowego, hydraulicznego, smarów,</li>
+                        <li>odpady płynne lub cieknące,</li>
+                        <li>IBC, beczki, kanistry → niezależnie od wielkości.</li>
+                    </ul>
+                </li>
+
+                <li><b>Minimalna pojemność wanny:</b>
+                    <ul>
+                        <li>co najmniej 110% największego pojemnika LUB</li>
+                        <li>25% całkowitej objętości magazynowanych substancji — stosuje się większą wartość.</li>
+                    </ul>
+                </li>
+
+                <li><b>Typowe wymagania praktyczne dla budów / PV:</b>
+                    <ul>
+                        <li>beczka 200 l → wanna min. 220 l,</li>
+                        <li>mały transformator olejowy (ok. 100–150 l oleju) → wanna min. 165 l,</li>
+                        <li>zestawy sorbentów → szczelne kuwety ociekowe.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <span class="tip">Wanny ociekowe muszą być szczelne, odporne chemicznie i ustawione na stabilnym podłożu. Idealne: stal ocynkowana lub PE-HD.</span>
         </div>
     </div>
-
-    <div class="footer">
-        <b>Sebastian Audyt Tool v4.0 | OZE & Elektro</b><br>
-        Aktualizacja: Marzec 2026.
-    </div>
-
-    <script>
-        function toggle(header) {
-            const content = header.nextElementSibling;
-            const arrow = header.querySelector('span');
-            if (content.style.display === "block") {
-                content.style.display = "none";
-                arrow.innerText = "▼";
-            } else {
-                content.style.display = "block";
-                arrow.innerText = "▲";
-            }
-        }
-    </script>
-</body>
-</html>
+</div>
