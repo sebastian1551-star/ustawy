@@ -8,6 +8,7 @@
         :root {
             --blue-main: #0077b6;
             --blue-light: #2196F3;
+            --blue-steel: #4682B4;
             --orange: #FF9800;
             --red: #f44336;
             --grey: #607D8B;
@@ -66,6 +67,7 @@
 
         /* KOLORY SEKCJI */
         .bg-blue { background-color: var(--blue-light); }
+        .bg-blue-steel { background-color: var(--blue-steel); }
         .bg-orange { background-color: var(--orange); }
         .bg-red { background-color: var(--red); }
         .bg-grey { background-color: var(--grey); }
@@ -115,12 +117,28 @@
 
         .arrow { transition: 0.3s; }
         .is-open .arrow { transform: rotate(180deg); }
+        
+        .piktogram {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            border: 2px solid red;
+            transform: rotate(45deg);
+            margin: 10px 20px;
+            text-align: center;
+            background: white;
+        }
+        .piktogram-inner {
+            transform: rotate(-45deg);
+            font-size: 30px;
+            line-height: 50px;
+        }
     </style>
 </head>
 <body>
 
 <div class="container">
-    <div class="main-title">Skrót audyt</div>
+    <div class="main-title">Skrót audytorski</div>
 
     <div class="section">
         <div class="section-header bg-blue" onclick="toggle(this)">
@@ -164,8 +182,32 @@
     </div>
 
     <div class="section">
+        <div class="section-header bg-blue-steel" onclick="toggle(this)">
+            <span>🟦 BUTLE GAZOWE: PRZECHOWYWANIE</span>
+            <span class="arrow">▼</span>
+        </div>
+        <div class="section-content">
+            <span class="law-tag">Rozp. Ministra Gospodarki (Dz.U. 2002 nr 78 poz. 708)</span>
+            <ul>
+                <li><strong>Pozycja:</strong> Butle muszą być przechowywane wyłącznie w pozycji <strong>pionowej</strong> i zabezpieczone przed upadkiem (łańcuchy, obejmy).</li>
+                <li><strong>Składowanie:</strong> Zamykana, ażurowa klatka (magazyn) zabezpieczona przed dostępem osób postronnych.</li>
+                <li><strong>Lokalizacja:</strong> Miejsce wentylowane, z dala od źródeł ognia, iskier oraz materiałów łatwopalnych (min. 5m).</li>
+                <li><strong>Oznakowanie:</strong> W miejscu składowania musi widnieć piktogram <strong>"Gazy łatwopalne"</strong>.</li>
+            </ul>
+            <div style="display: flex; align-items: center; background: #fafafa; padding: 10px; border-radius: 8px;">
+                <div class="piktogram">
+                    <div class="piktogram-inner">🔥</div>
+                </div>
+                <div>
+                    <strong>Piktogram CLP/GHS02:</strong> Obowiązkowy przy butlach z acetylenem, propanem-butanem czy wodorem.
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="section">
         <div class="section-header bg-brown" onclick="toggle(this)">
-            <span>🟫 ODPADY KOMUNALNE I BUDOWLANE (w tym niebezpieczne)</span>
+            <span>🟫 ODPADY KOMUNALNE I BUDOWLANE</span>
             <span class="arrow">▼</span>
         </div>
         <div class="section-content">
@@ -179,19 +221,13 @@
             <ul>
                 <li>Muszą być gromadzone w wydzielonych, opisanych pojemnikach.</li>
                 <li>Zapewnienie regularnego odbioru (umowa z gminą lub firmą).</li>
-                <li>Segregacja na 5 frakcji selektywnie zbieranych- szkło, bio, papier, metale i tworzywa sztuczne oraz zmieszane</li>
-                <li>Stabilne, nieprzepuszczlane podłoże, trwały materiał</li>
+                <li>Segregacja na 5 frakcji: szkło, bio, papier, metale/tworzywa, zmieszane.</li>
+                <li>Podłoże stabilne, nieprzepuszczalne.</li>
             </ul>
-            <strong>Karta Przekazania Odpadu (BDO):</strong>
+            <strong>BDO:</strong>
             <ul>
-                <li>Sprawdź, czy każdy transport odpadów z budowy ma wygenerowaną kartę w systemie BDO.</li>
-                <li>Karty KPO w ciągu 14 dni do wghlądu dla ENPROM</li>
-            </ul>
-            <strong>Odpady niebezpieczne budowa</strong>. 
-            <ul>
-            <li>Nie wolno mieszać różnych rodzajów odpadów niebezpiecznych,</li>
-            <li>mieszać odpadów niebezpiecznych z odpadami innymi niż niebezpieczne,</li>
-            <li>mieszać odpadów niebezpiecznych z substancjami, materiałami, przedmiotami, rozcieńczać substancji niebezpiecznych.</li>
+                <li>KPO wygenerowana w systemie przed transportem.</li>
+                <li>Karty KPO dostarczane w ciągu 14 dni do wglądu dla ENPROM.</li>
             </ul>
         </div>
     </div>
@@ -203,18 +239,13 @@
         </div>
         <div class="section-content">
             <span class="law-tag">Rozporządzenie REACH / BHP</span>
-            <strong>Dostępność na budowie:</strong>
             <ul>
-                <li>Każda substancja niebezpieczna (paliwa, oleje, spraye, żywice) <strong>musi</strong> mieć Kartę Charakterystyki (SDS) dostępną na miejscu prac.</li>
-                <li>Karty mogą być w formie segregatora lub cyfrowej (dostępnej dla każdego pracownika).</li>
-            </ul>
-            <strong>Weryfikacja aktualności:</strong>
-            <ul>
-                <li>Sprawdź sekcję 1 (dane dostawcy) i sekcję 16 (data aktualizacji).</li>
-                <li>Czy instrukcje z karty (np. środki ochrony osobistej) są stosowane przez pracowników?</li>
+                <li>Każda substancja niebezpieczna (paliwa, oleje, spraye) <strong>musi</strong> mieć SDS na miejscu.</li>
+                <li>Weryfikacja: sekcja 1 (dostawca) i sekcja 16 (aktualizacja).</li>
+                <li>Czy pracownicy stosują Środki Ochrony Indywidualnej (ŚOI) wskazane w karcie?</li>
             </ul>
             <div class="danger-box">
-                <strong>BRAK KARTY = BRAK PRACY:</strong> W razie wycieku lub zatrucia, karta jest niezbędna dla służb ratunkowych!
+                <strong>BRAK KARTY = STOP PRACY:</strong> Niezbędna dla służb medycznych w razie wypadku!
             </div>
         </div>
     </div>
@@ -228,7 +259,7 @@
             <ul>
                 <li>Wykop > 1m = barierka 1,1m + bortnica 15cm.</li>
                 <li>Schodnie: <strong>obustronne poręcze</strong>.</li>
-                <li>Urobek min. 0,6m od krawędzi.</li>
+                <li>Urobek min. 0,6m od krawędzi wykopu.</li>
             </ul>
         </div>
     </div>
@@ -240,24 +271,25 @@
         </div>
         <div class="section-content">
             <ul>
-                <li>Wanna pod agregat (110% pojemności).</li>
-                <li>Sorbent / Spill Kit na miejscu.</li>
-                <li>Gaśnica z aktualną kontrolką (przegląd raz w roku).</li>
+                <li>Wanna pod agregat (110% pojemności zbiornika).</li>
+                <li>Sorbent / Spill Kit na miejscu (dostępny od ręki).</li>
+                <li>Gaśnica z ważnym przeglądem (raz w roku).</li>
             </ul>
         </div>
     </div>
 
     <div class="section" style="border-bottom: none;">
         <div class="section-header bg-green" onclick="toggle(this)">
-            <span>✅ Dodatkowo</span>
+            <span>✅ PODSUMOWANIE KONTROLNE</span>
             <span class="arrow">▼</span>
         </div>
         <div class="section-content">
             <ol>
-                <li>butle z gazem powinny byc trzymane pionowo</li>
-                <li>Czy do każdego sprayu/oleju jest Karta Charakterystyki?</li>
-                <li>Czy schodnia do wykopu ma dwie barierki?</li>
-                <li>Czy wylot deszczówki do ?</li>
+                <li>Czy butle z gazem stoją pionowo w klatce/zabezpieczone?</li>
+                <li>Czy do każdego sprayu/oleju/paliwa jest Karta Charakterystyki?</li>
+                <li>Czy schodnia do wykopu posiada obie barierki?</li>
+                <li>Czy wylot deszczówki jest drożny i zgodny z pozwoleniem?</li>
+                <li>Czy odpady niebezpieczne są oddzielone od komunalnych?</li>
             </ol>
         </div>
     </div>
@@ -266,7 +298,13 @@
 <script>
     function toggle(header) {
         const content = header.nextElementSibling;
-        if (content.style.display === "block") {
+        const isOpen = content.style.display === "block";
+        
+        // Zamykanie innych (opcjonalne, jeśli chcesz widzieć tylko jedną naraz)
+        // document.querySelectorAll('.section-content').forEach(c => c.style.display = 'none');
+        // document.querySelectorAll('.section-header').forEach(h => h.classList.remove('is-open'));
+
+        if (isOpen) {
             content.style.display = "none";
             header.classList.remove('is-open');
         } else {
